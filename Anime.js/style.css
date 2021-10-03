@@ -1,0 +1,160 @@
+@import url("https://use.typekit.net/mrd0sbk.css");
+
+/* https://stackoverflow.com/questions/3540194/how-to-make-a-grid-like-graph-paper-grid-with-just-css */
+
+body{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.balkUp{
+  height: 100vh;
+  margin-top: -196vh;
+  width: 100vw;
+  background-color: #C500ED;
+  position: absolute;
+  z-index: 100;
+}
+
+
+.balkDown{
+  height: 100vh;
+  margin-bottom: -98vh;
+  bottom: 0;
+  width: 100vw;
+  background-color: #C500ED;
+  position: absolute;
+  z-index: 0;
+}
+
+
+main {
+  font-family: cubano, sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  font-style: normal;
+  background-color: #ffffff;
+  background-size: 80px 80px;
+  padding: 0;
+  margin: 0;
+  background-image:
+    linear-gradient(to right, rgba(140, 161, 255, 0.486) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(140, 161, 255, 0.486) 2px, transparent 2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.opener{
+  position: absolute;
+  z-index: 999;
+  height: 100vh;
+  width: 100vw;
+  pointer-events:none;
+}
+
+.enter{
+  position: absolute;
+  z-index: 100;
+  font-size: 4em;
+  justify-content: center;
+  align-items: center;
+  font-family: cubano, sans-serif;
+  font-weight: 400;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+  top: 45vh;
+  left:0;
+  right:0;
+  margin: auto;
+  width:50%;
+  pointer-events: visible;
+  text-decoration: none;
+}
+
+.enter:hover{
+  color: #fff;
+}
+
+.opener .up{
+  height: 100vh;
+  margin-top: -50vh;
+  background-color: rgba(0, 246, 222,1);
+}
+.opener .down {
+  height: 100vh;
+  margin-bottom: 50vh;
+  background-color: rgba(0, 246, 222,1);
+}
+
+
+.title h1{
+font-size: 8em;
+margin: 0;
+margin-top: -3vh;
+color: #C500ED;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: black;
+text-shadow: 8px 8px 0px rgba(0, 246, 222,1);
+}
+
+.title h3{
+  font-size: 2em;
+  margin-top: -3vh;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-align: right;
+  margin: 0;
+  }
+  
+
+.video{
+    color:transparent;
+    text-decoration: none;
+    cursor: pointer;
+    }
+    
+.video:hover{
+color: #C500ED;
+cursor: pointer;
+}
+
+
+.videoDiv{
+position: absolute;
+width: 100vw;
+height: 100vh;
+bottom: 0vh;
+left: -100vw  ;
+top: 0vh;
+z-index: 100;
+margin: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.videoDiv h1{
+  font-size: 8em;
+  color: #C500ED;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 8px 8px 0px rgba(0, 246, 222,1);
+  }
+  
+ .videoDiv h3{
+   position: absolute;
+    font-size: 2em;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+left: 5vh;
+top: 3vh;
+    }
