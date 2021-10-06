@@ -8,15 +8,11 @@ import ModelLoader from './components/ModelLoader'
 import Header from './components/header'
 import Info from './components/info'
 
-const style = {
-  height: '100vh',
-};
 
 function Loader() {
   const  { progress } = useProgress();
 
   return <Html className="loader" center>{Math.round(progress)} % ingeladen</Html>  
-  
 }
 
 
@@ -25,13 +21,13 @@ export default function App() {
     <Suspense>
     <Header title="Finalshow" creator="Joppe Rabijns"/>
     <Info/>
-      <Canvas dpr={[1, 2]} shadows camera={{ position: [-2, 2, 4], fov: 25 }} style={style}>
+      <Canvas dpr={[1, 2]} shadows camera={{ position: [-2, 2, 4], fov: 25 }}>
         <directionalLight position={[10, 10, 0]} intensity={1} />
         <directionalLight position={[-10, 10, 5]} intensity={0.5} />
         <directionalLight position={[-10, 20, 0]} intensity={1} />
         <directionalLight position={[0, -10, 0]} intensity={0.25} />
         <Float> 
-        <Rotate position-y={-0.2} scale={0.8}>
+        <Rotate position-y={-0.1} scale={0.8}>
           <Suspense fallback={<Loader />}>
          <ModelLoader url="/FinalRoom.glb"/>
          <ContactShadows rotation-x={Math.PI / 2} position={[0, -0.8, 0]} opacity={0.15} width={10} height={10} blur={1.5} far={1.8} />

@@ -47,6 +47,7 @@ font-weight: 600;
   left: 50px;
   bottom: 50px;
   z-index: 99;
+  display: flex;
 }
 
 .info div{
@@ -59,7 +60,8 @@ font-weight: 600;
   align-items: center;
   flex-direction: column;
   text-align: left;
-  background-color: rgba(255, 255, 255, 0.199);
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.856);
 }
 
 .info div h6{
@@ -75,9 +77,9 @@ margin: 0;
   }
 
  #leva__root{
-    --leva-colors-elevation1: #ffffff !important;
-    --leva-colors-elevation2: #ffffff !important;
-    --leva-colors-elevation3: #ffffff !important;
+    --leva-colors-elevation1: #ffffffa1 !important;
+    --leva-colors-elevation2: #ffffffa1 !important;
+    --leva-colors-elevation3: #ffffffa1 !important;
     --leva-colors-accent1: #000000 !important;
     --leva-colors-accent2: #000000 !important;
     --leva-colors-accent3: #000000 !important;
