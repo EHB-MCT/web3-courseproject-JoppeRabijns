@@ -1,6 +1,7 @@
 const Model = require('../models/model');
 const multer = require('multer');
 
+//https://lo-victoria.com/build-rest-api-with-nodejs-upload-files-mongodb
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
       cb(null, './uploads');
@@ -46,7 +47,6 @@ const newModel = (req, res) => {
               if(err) return res.json({Error: err});
           })
       }else{
-          if(err) return res.json(`Something went wrong, please try again. ${err}`);
           return res.json({message:"Model already exists"});
       }
   })    
@@ -57,7 +57,7 @@ const getOneModel = (req, res) => {
 
   Model.findOne({title:title}, (err, data) => {
   if(err || !data) {
-      return res.json({message: "Tea doesn't exist."});
+      return res.json({message: "This model doesn't exist."});
   }
   else return res.json(data); 
   });
