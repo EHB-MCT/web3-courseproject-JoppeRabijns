@@ -1,0 +1,48 @@
+.upload{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.uploadTitle{
+  font-size: 125px;
+  margin: 0;
+  margin-bottom: 100px;
+}
+
+.title{
+  font-size: 250px;
+}
+
+input[type="file"]{
+
+}
+
+form{
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+form label{
+  margin-bottom: 10px;
+}
+
+form input{
+  border-radius: 3px;
+  height: 25px;
+  width: 20vw;
+  border: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.199),0 1px 2px 0 rgba(0, 0, 0, 0.308);
+}
+
+form input[type="submit"]{
+  background-color: black;
+  color: #fff;
+  height: 55px;
+  font-size: 20px;
+  font-weight: 600;
+}

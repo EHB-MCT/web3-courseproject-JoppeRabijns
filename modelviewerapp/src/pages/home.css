@@ -1,0 +1,29 @@
+.home{
+  display: flex;  
+  flex-wrap: wrap;
+}
+.item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
+  width: auto;
+  min-width: 15vh;
+  color: black;
+  margin: 15px;
+  text-align: center;
+}
+
+
+.link{
+  padding: 15px;
+  color: black;
+  font-size: 15px;
+}
+
+h1{
+  margin: 0;
+}
