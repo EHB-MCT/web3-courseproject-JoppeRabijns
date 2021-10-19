@@ -41,9 +41,9 @@ function Float(props){
   const { float } = useControls({ float: true })
    useFrame((state) => {
     if(float){
-    const t = state.clock.getElapsedTime();
-    ref.current.rotation.y = Math.sin(t / 4) / 8;
-    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 15;
+    const time = state.clock.getElapsedTime();
+    ref.current.rotation.y = Math.sin(time / 4) / 8;
+    ref.current.position.y = (1 + Math.sin(time / 1.5)) / 15;
   }
   })
   return <group ref={ref} {...props} />
