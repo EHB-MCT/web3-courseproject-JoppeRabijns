@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RENDER</title>
+</head>
+<body>
+  <form action="" id="form">
+    <label for="name">WAT IS UW NAAM?</label>
+    <br>
+    <input id="name" type="text">
+    <br>
+    <br>
+    <input type="submit">
+  </form>
+</body>
+
+<script>
+
+document.getElementById("form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  let name = document.getElementById("name").value;
+  let postData = {
+    "name": name,
+  };
+  await fetch('http://localhost:3000/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(postData)
+    })
+  });
+
+</script>
+
+</html>

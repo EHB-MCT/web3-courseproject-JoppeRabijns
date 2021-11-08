@@ -1,25 +1,57 @@
 const { render } = require('@nexrender/core')
+const express = require("express");
+const app = express();
+const cors = require('cors')
+const bodyParser = require('body-parser');
 
-const main = async () => {
+app.use(cors())
+
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+app.use(bodyParser.json());
+
+app.post("/", function (req, res) {
+    let name = req.body.name
+    main(name).catch(console.error);
+});
+
+const listener = app.listen(3000, () => {
+  console.log('App is listening on port ' + listener.address().port)
+})
+
+const main = async (name) => {
     const result = await render({
         "template": {
-            "src": "https://res.cloudinary.com/drxe6ukjd/raw/upload/v1634646007/testproject_ywxwwg.aep",
-            "composition": "main"
+            "src": "https://res.cloudinary.com/drxe6ukjd/raw/upload/v1636362722/testproject_yxsdil.aep",
+            "composition": "main",
         },
         "assets": [
             {
-                "src": "https://scontent-bru2-1.xx.fbcdn.net/v/t1.6435-9/119637748_2797179560516846_4264613610708360867_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=e3f864&_nc_ohc=7zeNyiMQkKIAX8jbMvo&_nc_ht=scontent-bru2-1.xx&oh=e469bc7cd8faa3a5814580313ba9f382&oe=6193E0E3",
+                "src": "https://img-19.ccm2.net/cI8qqj-finfDcmx6jMK6Vr-krEw=/1500x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg",
                 "type": "image",
-                "layerName": "background.png"
+                "layerName": "image"
             },
             {
-              "type": "data",
-              "layerName": "titel",
-              "property": "Source Text",
-              "value": "Wouter Heirstrate"
-          }
+                "type": "data",
+                "layerName": "Naam",
+                "property": "Source Text",
+                "value": `${name}`
+            }
         ],
         "actions":{
+            "predownload": [
+                {
+                    "module": "@nexrender/action-cache",
+                    "cacheDirectory": "/Users/joppe.rabijns/WEB3/nexrender/cache"
+                }
+            ],
+              "postdownload": [
+                {
+                    "module": "@nexrender/action-cache",
+                    "cacheDirectory": "/Users/joppe.rabijns/WEB3/nexrender/cache"
+                }
+            ],
             "postrender": [
                 {
                     "module": "@nexrender/action-encode",
@@ -27,9 +59,8 @@ const main = async () => {
                     "output": "encoded.mov"
                 },
                 {
-                    "module": "@nexrender/action-copy",
-                    "input": "encoded.mov",
-                    "output": "file:///Users/joppe.rabijns/Downloads/myresult.mov"
+                    "module": "@nexrender/action-copy",     
+                    "output": `/Users/joppe.rabijns/WEB3/nexrender/outputs/encoded${Math.random()*100}.mov`
                 }
             ]
         }
@@ -37,12 +68,12 @@ const main = async () => {
       , {
         binary: '/Applications/AdobeAfterEffects/aerender',
         skipCleanup: true,
-        debug: true,
-
     })
 }
 
-main().catch(console.error);
+
+
+
 
 /* 
 
@@ -55,8 +86,22 @@ nexrender-cli --file myjob.json --binary="/Applications/AdobeAfterEffects/aerend
 
 /* 
 
-FIX PERMISSIONS MAC
+FIX LOCAL PERMISSIONS MAC
 
 sudo chmod 777 /Applications/AdobeAfterEffects/aerender 
+
+*/
+
+
+/* 
+
+EDIT TEXT
+
+        {
+              "type": "data",
+              "layerName": "titel",
+              "property": "Source Text",
+              "value": "Wouter"
+          }
 
 */
