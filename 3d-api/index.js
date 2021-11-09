@@ -3,7 +3,7 @@ const routes = require('./routes/model');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use('/uploads', express.static('./uploads'));
