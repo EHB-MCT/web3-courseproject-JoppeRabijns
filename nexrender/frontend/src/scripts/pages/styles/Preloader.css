@@ -1,0 +1,11 @@
+.preloaderContainer {
+  margin: 0;
+  background-color: black;
+}
+
+.appTitle {
+  font-size: 100px;
+  font-weight: bolder;
+  text-decoration: none;
+  color: white;
+}
