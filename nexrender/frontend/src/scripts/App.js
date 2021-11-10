@@ -2,7 +2,7 @@ import React from "react";
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
 } from "react-router-dom";
 
 import Preloader from './pages/Preloader'

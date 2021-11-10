@@ -1,14 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import CustomLoader from '../molecules/Loader';
 
 import './styles/Preloader.css'
 
 export default function Preloader() {
+
   return(
     <div className="preloaderContainer">
-      <Link to="/create" class="appTitle">
+      <h1 class="appTitle">
         PITCH:fx
-      </Link>
+      </h1>
+      <CustomLoader target={'/create'} duration={3000}/>
     </div>
   )
 }

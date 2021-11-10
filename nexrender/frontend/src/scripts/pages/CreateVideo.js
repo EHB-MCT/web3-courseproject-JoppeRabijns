@@ -79,7 +79,7 @@ export default class CreateVideo extends Component{
             :
             undefined
           }
-          {this.state.step <=3 ?
+          {this.state.step <= this.state.totalSteps - 1 ?
             <CustomButton onClick={this.next.bind(this)} value='next'/>
             :
             <Link to='/download'>
