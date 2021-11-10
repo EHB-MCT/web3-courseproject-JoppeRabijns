@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CustomLoader from '../molecules/Loader';
 
 import './styles/Preloader.css'
