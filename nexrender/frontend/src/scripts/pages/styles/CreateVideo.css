@@ -1,0 +1,18 @@
+.createContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.createTitle {
+  text-transform: uppercase;
+}
+
+.createComponents {
+  height: 20rem;
+  min-width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

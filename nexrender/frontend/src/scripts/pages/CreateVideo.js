@@ -15,10 +15,36 @@ export default class CreateVideo extends Component{
       videoPaths: [],
       text: "",
       audioPaths: [],
-      originalAudio: false,
+      originalAudio: true,
       step: 1,
-      stepToLoad: <VideoUpload />
+      totalSteps: 0,
+      components: [],
+      stepNames: []
     }
+  }
+
+  componentDidMount() {
+    const stepNames = [
+      "Add your video tracks",
+      "Add your audio tracks",
+      "Choose your lower third",
+      "Edit your tracks",
+    ];
+
+    const components = [
+      <VideoUpload />,
+      <AudioUpload />,
+      <LowerThirds />,
+      <Editor />
+    ]
+
+    const totalSteps = stepNames.length;
+
+    this.setState({
+      stepNames: stepNames,
+      totalSteps: totalSteps,
+      components: components,
+    })
   }
 
   next() {
@@ -26,7 +52,6 @@ export default class CreateVideo extends Component{
     this.setState({
       step: newStep
     })
-    this.checkStep(newStep);
   }
 
   previous() {
@@ -34,35 +59,34 @@ export default class CreateVideo extends Component{
     this.setState({
       step: newStep
     })
-    this.checkStep(newStep);
-  }
-
-  checkStep(step){
-    let newComp;
-
-    if (step === 2)
-      newComp = <AudioUpload />;
-    else if (step === 3)
-      newComp = <LowerThirds />;
-    else if (step === 4)
-      newComp = <Editor />
-
-    this.setState({
-      stepToLoad: newComp
-    })
   }
 
   render(){
     return(
-      <div>
-      {this.state.stepToLoad}
-      {this.state.step <=3 ?
-        <CustomButton onClick={this.next.bind(this)} value='NEXT'/>
-        :
-        <Link to='/download'>
-          <CustomButton value='RENDER'/>
-        </Link>
-      }
+      <div className="createContainer">
+        <h1 className="createTitle">
+          {this.state.stepNames[this.state.step - 1]}
+        </h1>
+        <div className="createComponents">
+          {this.state.components[this.state.step - 1]}
+        </div>
+        {/* ---------------------
+        PREVIOUS AND NEXT BUTTONS
+        --------------------- */}
+        <div>
+          {this.state.step > 1 ?
+            <CustomButton onClick={this.previous.bind(this)} value='GO BACK' />
+            :
+            undefined
+          }
+          {this.state.step <=3 ?
+            <CustomButton onClick={this.next.bind(this)} value='next'/>
+            :
+            <Link to='/download'>
+              <CustomButton value='render' />
+            </Link>
+          }
+        </div>
       </div>
     )
   }

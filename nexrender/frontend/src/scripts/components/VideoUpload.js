@@ -4,6 +4,8 @@ import './styles/VideoUpload.css';
 
 export default function VideoUpload(){
   return(
-    <p>VideoUpload</p>
+    <div className="videoContainer">
+      <p>Juu</p>
+    </div>
   )
 }

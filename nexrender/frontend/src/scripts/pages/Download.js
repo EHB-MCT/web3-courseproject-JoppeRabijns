@@ -6,7 +6,7 @@ export default function Download() {
   return(
     <div>
       <p>
-        Dewnload
+        Download
       </p>
     </div>
   )
