@@ -1,0 +1,9 @@
+.uploadzoneContainer {
+  border: 1px dashed black;
+  border-radius: 12px;
+  width: 25rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
