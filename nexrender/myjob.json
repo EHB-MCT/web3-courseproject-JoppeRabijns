@@ -1,0 +1,27 @@
+{
+  "template": {
+      "src": "https://res.cloudinary.com/drxe6ukjd/raw/upload/v1635148717/testproject_ynacby.aep",
+      "composition": "main"
+  },
+  "assets": [
+    {
+        "src": "https://img-19.ccm2.net/cI8qqj-finfDcmx6jMK6Vr-krEw=/1500x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg",
+        "type": "image",
+        "layerName": "image"
+    }
+],
+  "actions":{
+    "postrender": [
+      {
+          "module": "@nexrender/action-encode",
+          "preset": "mov",
+          "output": "encoded.mov"
+      },
+      {
+          "module": "@nexrender/action-copy",     
+          "output": "/Users/joppe.rabijns/WEB3/nexrender/outputs/encoded.mov"
+      }
+  ]
+  }
+}
+

@@ -1,7 +1,10 @@
 {
   "dependencies": {
     "@nexrender/action-cache": "^1.29.0",
+    "@nexrender/api": "^1.27.0",
     "@nexrender/core": "^1.31.0",
+    "@nexrender/server": "^1.31.1",
+    "@nexrender/worker": "^1.32.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1"
