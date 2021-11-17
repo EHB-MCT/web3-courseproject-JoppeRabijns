@@ -1,9 +1,15 @@
 .uploadzoneContainer {
-  border: 1px dashed black;
+  border: 1px dashed rgb(109, 109, 109);
   border-radius: 12px;
   width: 25rem;
-  height: 15rem;
+  height: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.dragState {
+  border-style: dotted;
+  background-color: blue;
 }

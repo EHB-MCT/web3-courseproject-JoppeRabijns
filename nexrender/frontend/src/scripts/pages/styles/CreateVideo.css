@@ -16,3 +16,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.projectTitle {
+  padding-bottom: 2rem;
+  margin-top: -2rem;
+  font-weight: 300;
+  font-style: italic;
+}

@@ -3,6 +3,7 @@ import AudioUpload from '../components/AudioUpload';
 import LowerThirds from '../components/LowerThirds';
 import Editor from '../components/Editor';
 import VideoUpload from '../components/VideoUpload';
+import ProjectSettings from '../components/ProjectSettings';
 import { Link } from 'react-router-dom';
 
 import './styles/CreateVideo.css'
@@ -12,19 +13,21 @@ export default class CreateVideo extends Component{
   constructor(props) {
     super(props);
     this.state = {
+      projectName: '',
       videoPaths: [],
-      text: "",
+      text: '',
       audioPaths: [],
       originalAudio: true,
       step: 1,
       totalSteps: 0,
       components: [],
-      stepNames: []
+      stepNames: [],
     }
   }
 
   componentDidMount() {
     const stepNames = [
+      "Add a unique project name",
       "Add your video tracks",
       "Add your audio tracks",
       "Choose your lower third",
@@ -32,6 +35,7 @@ export default class CreateVideo extends Component{
     ];
 
     const components = [
+      <ProjectSettings projectName={this.setProjectName.bind(this)}/>,
       <VideoUpload />,
       <AudioUpload />,
       <LowerThirds />,
@@ -44,6 +48,12 @@ export default class CreateVideo extends Component{
       stepNames: stepNames,
       totalSteps: totalSteps,
       components: components,
+    })
+  }
+
+  setProjectName(name) {
+    this.setState({
+      projectName: name
     })
   }
 
@@ -64,6 +74,11 @@ export default class CreateVideo extends Component{
   render(){
     return(
       <div className="createContainer">
+        {
+          this.state.projectName && this.state.step !== 1 ?
+            <h1 className="projectTitle">{this.state.projectName}</h1>
+          : null
+        }
         <h1 className="createTitle">
           {this.state.stepNames[this.state.step - 1]}
         </h1>

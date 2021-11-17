@@ -7,7 +7,7 @@ export default function Preloader() {
 
   return(
     <div className="preloaderContainer">
-      <h1 class="appTitle">
+      <h1 className="appTitle">
         PITCH:fx
       </h1>
       <CustomLoader target={'/create'} duration={3000}/>

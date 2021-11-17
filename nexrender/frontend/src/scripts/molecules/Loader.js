@@ -4,19 +4,21 @@ import { useNavigate } from "react-router-dom";
 
 import './styles/Loader.css'
 
-export default function CustomLoader({duration=2000, target}) {
+export default function CustomLoader({duration=2000, target='', type='Bars'}) {
 
   const navigate = useNavigate();
 
   function timeout(){
-    navigate(target)
+    if(target) {
+      navigate(target)
+    }
   }
 
   return(
     <div>
       {setTimeout(timeout, duration)}
       <Loader
-        type='Bars'
+        type= {type}
         color='#FFF'
         height={80}
         width={200}
