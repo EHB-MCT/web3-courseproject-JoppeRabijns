@@ -1,7 +1,6 @@
 import React from 'react';
 import Uploadzone from '../molecules/UploadZone';
 import { useState } from 'react';
-import CustomLoader from '../molecules/Loader';
 
 import './styles/VideoUpload.css';
 
@@ -10,15 +9,14 @@ export default function VideoUpload(){
   const [isLoading, setIsLoading] = useState(false);
 
   function postData(files) {
-    const convertedFiles = {files};
-    console.log(convertedFiles);
+    console.log(files);
     try {
       fetch('http://localhost:5000/uploadVideo', {
         method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: convertedFiles,
+        // headers: {
+        //   'Content-Type': 'application/json'
+        // },
+        body: files,
       })
       .then(data => data.json())
       .then(data => {
@@ -38,9 +36,8 @@ export default function VideoUpload(){
       {!isLoading ? 
         <Uploadzone loading={loading} files={postData}/>
         :
-        <CustomLoader type='Bars'/>
+        <p>Please wait...</p>
       }
-      <CustomLoader type='Bars'/>
     </div>
   )
 }

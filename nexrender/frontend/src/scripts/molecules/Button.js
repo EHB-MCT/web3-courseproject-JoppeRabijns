@@ -2,8 +2,8 @@ import React from 'react'
 
 import './styles/Button.css'
 
-export default function CustomButton(props){
+export default function CustomButton({value, onClick=undefined}){
   return(
-    <button onClick={props?.onClick} className="navButton">{props.value}</button>
+    <button onClick={onClick} className="navButton">{value}</button>
   )
 }

@@ -9,18 +9,27 @@ import uploadLogo from '../../assets/upload.svg'
 export default function Uploadzone(props) {
   const onDrop = useCallback(acceptedFiles => {
     props.loading(true);
-    console.log(acceptedFiles);
-    acceptedFiles.forEach((file) => {
+    const readFiles = [];
+    let doneCounter = 0;
+    
+    acceptedFiles.forEach((file, index) => {
       const reader = new FileReader();
+      reader.readAsArrayBuffer(file)
       reader.onabort = () => console.log('file reading was aborted');
       reader.onerror = () => console.log('file reading has failed');
       reader.onload = (data) => {
-          setTimeout(() => props.loading(false), 2000);
-          console.log('file reading was succesful', data.target);
+        doneCounter++;
+        //console.log('file', index, 'reading was succesful');
+        readFiles.push(data.target);
+        if(doneCounter === acceptedFiles.length) {
+          console.log('readFiles', readFiles);
+          const jsonFiles = JSON.stringify(readFiles);
+          console.log('jsonFiles', jsonFiles);
+          props.loading(false);
+          props.files(jsonFiles);
+        }
       };
-      reader.readAsArrayBuffer(file)
     });
-    //props.files({...acceptedFiles})
   }, []);
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop});
 
