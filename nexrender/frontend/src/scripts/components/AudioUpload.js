@@ -12,10 +12,11 @@ export default function AudioUpload(){
 	    "headers": {
 	    	"content-type": "application/x-www-form-urlencoded",
 	    	"x-rapidapi-host": "voicerss-text-to-speech.p.rapidapi.com",
-	    	"x-rapidapi-key": "01d24eec24mshd85d208ee9bc6cap120b4cjsn9098a5ecb31f"
+	    	"x-rapidapi-key": "01d24eec24mshd85d208ee9bc6cap120b4cjsn9098a5ecb31f",
+        "X-RapidAPI-Proxy-Secret": "dfca0870-4b71-11ec-86ca-e3e15557a0be",
 	    },
 	    "body": {
-	    	"src": "hallo",
+	    	"src": input.target.value,
 	    	"hl": "en-us",
 	    	"r": "1",
 	    	"c": "mp3",
