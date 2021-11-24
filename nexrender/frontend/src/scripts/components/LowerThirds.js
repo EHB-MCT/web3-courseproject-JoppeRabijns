@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import TextInput from '../molecules/TextInput'
+import VideoPlayer from '../molecules/VideoPLayer';
 
 import './styles/LowerThirds.css';
 
@@ -23,11 +25,21 @@ export default function LowerThirds(){
     }
   }
 
+  function getGifs() {
+    fetch('http://localhost:5000/lowerThirds')
+  }
+
+  useEffect(() => {
+    getGifs();
+  })
+
+
   return(
     <div>
-      <input type="text" placeholder="name"/>
-        <br/>
-        <input type="text" placeholder="title"/>
+        <div className="lowerContainer">
+      <TextInput value="Your name"/> <br /><br />
+      <TextInput value="Function or organisation"/>
+      </div>
         <div className="lowerthirds">
         <div className="lowerthirdsDiv">
           <img src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT1_1_ztqysq.gif" onClick={() => setNumber(1)}/>
@@ -39,6 +51,6 @@ export default function LowerThirds(){
           <img src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT3_awcluh.gif" onClick={() => setNumber(3)}/>
         </div>
       </div>
-    </div>
-  )
+  </div>
+)
 }
