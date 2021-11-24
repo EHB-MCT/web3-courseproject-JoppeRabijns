@@ -1,0 +1,30 @@
+form{
+  display: flex;
+align-items: center;
+flex-direction: column  ;
+}
+
+.lowerthirds{
+  width: 70vw;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.lowerthirdsDiv{
+  margin-top: 30px;
+  width:400px;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.lowerthirdsDiv:hover{
+  opacity: 0.7;
+}
+
+.lowerthirdsDiv img{
+  width:400px;
+  height: auto;
+  border-radius: 2px;
+}
