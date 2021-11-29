@@ -5,14 +5,16 @@ import "./styles/LowerThirds.css";
 
 export default function LowerThirds() {
   const [number, setNumber] = useState();
+  const [name, setName] = useState();
+  const [title, setTitle] = useState();
 
   function renderLT() {
     try {
       fetch(`http://localhost:5000/lowerthirds/${number}`, {
         method: "POST",
         body: {
-          name: "Joppe",
-          title: "student",
+          name,
+          title,
         },
       })
         .then((data) => data.json())
@@ -31,12 +33,20 @@ export default function LowerThirds() {
     getGifs();
   });
 
+  function makeName(item) {
+    setName(item.target.value);
+  }
+
+  function makeTitle(item) {
+    setTitle(item.target.value);
+  }
+
   return (
     <div>
       <div className="lowerContainer">
-        <TextInput value="Your name" /> <br />
+        <TextInput value="Your name" done={makeName} /> <br />
         <br />
-        <TextInput value="Function or organisation" />
+        <TextInput value="Function or organisation" done={makeTitle} />
       </div>
       <div className="lowerthirds">
         <div

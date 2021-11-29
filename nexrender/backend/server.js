@@ -30,23 +30,28 @@ APP.post("/render", (req, res) => {
     mergedVideo = mergedVideo.addInput(video.url).seekInput(video.inTime);
   });
 
+  /*   res.writeHead(200, {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "X-Content-Type-Options": "nosniff",
+  }); */
+
   mergedVideo
     .mergeToFile(
       "./mergedVideo.mp4",
       "/Users/joppe.rabijns/WEB3/nexrender/backend/"
     )
     .on("progress", function (progress) {
-      console.log("Processing: " + progress.timemark);
+      /*  res.write(`${progress.percent}`); */
+      console.log(progress.percent);
     })
     .on("error", function (err) {
       console.log("Error " + err.message);
     })
     .on("end", function () {
-      console.log(
-        "PATH: /Users/joppe.rabijns/WEB3/nexrender/backend/mergedVideo.mp4"
-      );
+      res.send("test");
+      /*   res.end(); */
     });
-  res.sendStatus(200);
 });
 
 APP.post("/lowerthirds/:id", (req, res) => {
