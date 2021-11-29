@@ -6,6 +6,8 @@ const APP = EXPRESS();
 const { checkAddVideoBody } = require('./helpers/helper');
 const CLOUDINARY = require('./config/cloudinary');
 const { render } = require('@nexrender/core')
+let fluent_ffmpeg = require("fluent-ffmpeg");
+
 
 // MIDDLEWARE
 APP.use(CORS());
@@ -21,6 +23,26 @@ APP.get('/', (req, res) => {
   res.send('Hello');
 });
 
+APP.post('/render', (req, res) => {
+  let mergedVideo = fluent_ffmpeg();
+
+  req.body.videoNames.forEach((video) => {
+    mergedVideo = mergedVideo.addInput(video.url).seekInput(video.inTime);
+  });
+  
+  mergedVideo.mergeToFile('./mergedVideo.mp4', '/Users/joppe.rabijns/WEB3/nexrender/backend/')
+    .on('progress', function(progress) {
+      console.log('Processing: ' + progress.timemark);
+    })
+    .on('error', function(err) {
+        console.log('Error ' + err.message);
+    })
+    .on('end', function() {
+        console.log('PATH: /Users/joppe.rabijns/WEB3/nexrender/backend/mergedVideo.mp4');
+    });
+  res.sendStatus(200);
+});
+
 
 APP.post('/lowerthirds/:id', (req, res) => {
   if(req.params.id == 1){
@@ -33,7 +55,6 @@ APP.post('/lowerthirds/:id', (req, res) => {
   res.sendStatus(200);
 });
 
-/** */
 async function renderLT(url, comp, name, subtext, req){
 const result = await render({
   "template": {

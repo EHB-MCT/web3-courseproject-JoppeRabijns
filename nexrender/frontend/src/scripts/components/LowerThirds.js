@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react';
 import TextInput from '../molecules/TextInput'
-import VideoPlayer from '../molecules/VideoPLayer';
 
 import './styles/LowerThirds.css';
 
@@ -41,14 +40,14 @@ export default function LowerThirds(){
       <TextInput value="Function or organisation"/>
       </div>
         <div className="lowerthirds">
-        <div className="lowerthirdsDiv">
-          <img src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT1_1_ztqysq.gif" onClick={() => setNumber(1)}/>
+        <div className="lowerthirdsDiv" style={number === 1 ? {border: "10px solid blue"} : {}}>
+          <img src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT1_1_ztqysq.gif" alt="" onClick={() => setNumber(1)}/>
         </div>
-        <div className="lowerthirdsDiv">
-          <img src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT2_2_jyhpm1.gif" onClick={() => setNumber(2)}/>
+        <div className="lowerthirdsDiv" style={number === 2 ? {border: "10px solid blue"} : {}}>
+          <img src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT2_2_jyhpm1.gif" alt="" onClick={() => setNumber(2)}/>
         </div>
-        <div className="lowerthirdsDiv">
-          <img src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT3_awcluh.gif" onClick={() => setNumber(3)}/>
+        <div className="lowerthirdsDiv" style={number === 3 ? {border: "10px solid blue"} : {}}>
+          <img src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT3_awcluh.gif" alt="" onClick={() => setNumber(3)}/>
         </div>
       </div>
   </div>
