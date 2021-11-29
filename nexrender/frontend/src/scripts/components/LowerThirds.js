@@ -1,23 +1,24 @@
-import React, { useEffect } from 'react';
-import TextInput from '../molecules/TextInput'
-import VideoPlayer from '../molecules/VideoPLayer';
+import React, { useEffect } from "react";
+import TextInput from "../molecules/TextInput";
+import VideoPlayer from "../molecules/VideoPLayer";
 
-import './styles/LowerThirds.css';
+import "./styles/LowerThirds.css";
 
-export default function LowerThirds(){
+export default function LowerThirds() {
   function getGifs() {
-    fetch('http://localhost:5000/lowerThirds')
+    fetch("http://localhost:5000/lowerThirds");
   }
 
   useEffect(() => {
     getGifs();
-  })
+  });
 
-  return(
+  return (
     <div className="lowerContainer">
-      <TextInput value="Your name"/> <br /><br />
-      <TextInput value="Function or organisation"/>
-      <VideoPlayer/>
+      <TextInput value="Your name" /> <br />
+      <br />
+      <TextInput value="Function or organisation" />
+      <VideoPlayer />
     </div>
-  )
+  );
 }

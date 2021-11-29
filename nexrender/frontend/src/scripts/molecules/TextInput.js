@@ -1,9 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import './styles/TextInput.css';
+import "./styles/TextInput.css";
 
-export default function TextInput({done, value}){
-  return(
-    <input type="text" className="textInput" placeholder={value} onBlur={done}/>
-  )
+export default function TextInput({ done, value }) {
+  return (
+    <input
+      type="text"
+      className="textInput"
+      placeholder={value}
+      onBlur={done}
+    />
+  );
 }
