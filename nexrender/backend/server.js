@@ -45,7 +45,7 @@ APP.post("/render", (req, res) => {
     });
 });
 
-APP.post("/makeFolder", (req, res) => {
+APP.post("/createProject", (req, res) => {
   console.log("\n\nyeet\n\n");
   let dir = `./outputs/${req.body.projectName}`;
 
@@ -86,12 +86,6 @@ APP.post("/lowerthirds/:id", (req, res) => {
 });
 
 async function renderLT(url, comp, name, subtext, req) {
-  let dir = `./outputs/${req.body.projectName}`;
-
-  if (!FS.existsSync(dir)) {
-    FS.mkdirSync(dir);
-  }
-
   const result = await render(
     {
       template: {

@@ -3,6 +3,8 @@ import TextInput from "../molecules/TextInput";
 
 import "./styles/ProjectSettings.css";
 
+const axios = require("axios").default;
+
 export default function ProjectSettings({ projectName, currentName }) {
   async function createFolder(input) {
     const name = input.target.value;
@@ -10,17 +12,17 @@ export default function ProjectSettings({ projectName, currentName }) {
     //
     sessionStorage.setItem("projectName", name);
     //
-    const req = await fetch("http://localhost:5000/makeFolder", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: {
-        projectName: "hallo",
-      },
-    });
-    const res = await req.json();
-    console.log(res);
+    try {
+      axios({
+        method: "post",
+        url: "http://localhost:5000/createProject",
+        data: {
+          projectName: name,
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
   return <TextInput done={createFolder} value={currentName} />;
 }
