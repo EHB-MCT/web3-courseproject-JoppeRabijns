@@ -23,7 +23,32 @@ APP.get("/", (req, res) => {
 });
 
 APP.post("/render", (req, res) => {
-  let mergedVideo = fluent_ffmpeg();
+  fluent_ffmpeg(
+    "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638042173/teasertijl_nprvcg.mp4"
+  )
+    .input(
+      "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638285059/Snow_LT_maincomp_1_nw2u5c.mov"
+    )
+    .addOptions(["-strict -2"])
+    .complexFilter(
+      [
+        {
+          filter: "overlay",
+          options: {
+            enable: "between(t,0,4)",
+            x: "0",
+            y: "0",
+          },
+          inputs: "[0:v][1:v]",
+          outputs: "tmp",
+        },
+      ],
+      "tmp"
+    )
+    .output("./mp.mp4")
+    .run();
+
+  /*   let mergedVideo = fluent_ffmpeg();
 
   req.body.videoNames.forEach((video) => {
     mergedVideo = mergedVideo.addInput(video.url).seekInput(video.inTime);
@@ -42,7 +67,7 @@ APP.post("/render", (req, res) => {
     .on("end", function () {
       console.log("finished");
       res.sendStatus(200);
-    });
+    }); */
 });
 
 APP.post("/createProject", (req, res) => {
