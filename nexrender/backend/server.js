@@ -48,13 +48,11 @@ APP.post("/render", (req, res) => {
 });
 
 APP.post("/createProject", (req, res) => {
-  console.log("\n\nyeet\n\n");
-  let dir = `./outputs/${req.body.projectName}`;
+  const dir = `./outputs/${req.body.projectName}`;
 
   if (!FS.existsSync(dir)) {
     FS.mkdirSync(dir);
   }
-
   res.status(200).send("Project folder has been created!");
 });
 
@@ -88,7 +86,13 @@ APP.post("/lowerthirds/:id", (req, res) => {
 });
 
 APP.post("/uploadVideo", (req, res) => {
-  console.log("server", req.body);
+  const files = req.body.files;
+  if (files) {
+    for (let data of files) {
+      console.log("server", data.file);
+      console.log("passed");
+    }
+  }
   res.send("het werkt");
 });
 

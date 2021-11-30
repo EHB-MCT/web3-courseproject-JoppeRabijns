@@ -9,11 +9,11 @@ export default function VideoUpload() {
   const [isLoading, setIsLoading] = useState(false);
 
   function postData(files) {
-    console.log({ files });
+    console.log(files);
     try {
       axios({
         method: "post",
-        url: "http://localhost:5000/upload",
+        url: "http://localhost:5000/uploadVideo",
         data: {
           files: files,
         },
