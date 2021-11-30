@@ -13,9 +13,10 @@ export default function VideoUpload() {
       fetch("http://localhost:5000/upload", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          //"Content-Type": "application/json",
+          //"Content-Type": "multipart/form-data",
         },
-        body: { files },
+        body: files,
       })
         .then((data) => data.json())
         .then((data) => {

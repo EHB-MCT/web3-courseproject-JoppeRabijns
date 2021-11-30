@@ -141,8 +141,9 @@ async function renderLT(url, comp, name, subtext, req) {
   );
 }
 
-APP.post("/upload", (req, res) => {
-  console.log(req.files.foo);
+APP.post("/uploadVideo", (req, res) => {
+  console.log("server", req.body);
+  res.sendStatus(200);
 });
 
 APP.get("/lowerThirds", (req, res) => {

@@ -1,31 +1,34 @@
 import React, { useCallback } from "react";
-import { useDropzone } from "react-dropzone";
-
+import Dropzone from "react-dropzone-uploader";
 import "./styles/UploadZone.css";
+import "react-dropzone-uploader/dist/styles.css";
 import uploadLogo from "../../assets/upload.svg";
 
 //http://jsfiddle.net/4cwpLvae/
 
 export default function Uploadzone(props) {
-  const onDrop = useCallback((acceptedFiles) => {
-    props.loading(true);
-    props.files(acceptedFiles);
-  }, []);
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  // specify upload params and url for your files
+  const getUploadParams = ({ meta }) => {
+    return { url: "http://localhost:5000/uploadVideo" };
+  };
+
+  // called every time a file's `status` changes
+  const handleChangeStatus = ({ meta, file }, status) => {
+    console.log(status, meta, file);
+  };
+
+  // receives array of files that are done uploading when submit button is clicked
+  const handleSubmit = (files, allFiles) => {
+    console.log(files.map((f) => f.meta));
+    allFiles.forEach((f) => f.remove());
+  };
 
   return (
-    <div
-      className={
-        isDragActive ? "uploadzoneContainer dragState" : "uploadzoneContainer"
-      }
-      {...getRootProps()}
-    >
-      <input {...getInputProps()} />
-      {isDragActive ? (
-        <p>Drop the files here.</p>
-      ) : (
-        <img src={uploadLogo} alt="upload icon" />
-      )}
-    </div>
+    <Dropzone
+      getUploadParams={getUploadParams}
+      onChangeStatus={handleChangeStatus}
+      onSubmit={handleSubmit}
+      accept="video/*"
+    />
   );
 }
