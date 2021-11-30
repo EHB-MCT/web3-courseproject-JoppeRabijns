@@ -3,23 +3,22 @@ const EXPRESS = require("express");
 const CORS = require("cors");
 const FS = require("fs");
 const APP = EXPRESS();
-const { checkAddVideoBody } = require("./helpers/helper");
+const BODYPARSER = require("body-parser");
 const { render } = require("@nexrender/core");
 let fluent_ffmpeg = require("fluent-ffmpeg");
 
 // MIDDLEWARE
 APP.use(CORS());
 APP.use(
-  EXPRESS.urlencoded({
-    extended: true,
+  BODYPARSER.urlencoded({
+    extended: false,
   })
 );
-APP.use(EXPRESS.json());
+APP.use(BODYPARSER.json());
 
 // ROUTES
 
 APP.get("/", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
   res.send("Hello");
 });
 
@@ -44,6 +43,17 @@ APP.post("/render", (req, res) => {
       console.log("finished");
       res.sendStatus(200);
     });
+});
+
+APP.post("/makeFolder", (req, res) => {
+  console.log("\n\nyeet\n\n");
+  let dir = `./outputs/${req.body.projectName}`;
+
+  if (!FS.existsSync(dir)) {
+    FS.mkdirSync(dir);
+  }
+
+  res.status(200).send("Project folder has been created!");
 });
 
 APP.post("/lowerthirds/:id", (req, res) => {
@@ -76,12 +86,12 @@ APP.post("/lowerthirds/:id", (req, res) => {
 });
 
 async function renderLT(url, comp, name, subtext, req) {
-  let fs = require("fs");
-  let dir = `./outputs/${req.body.projectName}`;
+  //let dir = `./outputs/${req.body.projectName}`;
+  //
+  //if (!FS.existsSync(dir)) {
+  //  FS.mkdirSync(dir);
+  //}
 
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
-  }
   const result = await render(
     {
       template: {
