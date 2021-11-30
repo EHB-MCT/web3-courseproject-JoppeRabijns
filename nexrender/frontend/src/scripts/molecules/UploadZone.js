@@ -8,8 +8,10 @@ import uploadLogo from "../../assets/upload.svg";
 
 export default function Uploadzone(props) {
   // specify upload params and url for your files
-  const getUploadParams = ({ meta }) => {
-    return { url: "http://localhost:5000/uploadVideo" };
+  const getUploadParams = ({file, meta }) => {
+    const body = new FormData();
+    body.append("filefield", file);
+    return { url: "http://localhost:5000/uploadVideo", body };
   };
 
   // called every time a file's `status` changes

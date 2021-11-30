@@ -86,11 +86,11 @@ APP.post("/lowerthirds/:id", (req, res) => {
 });
 
 async function renderLT(url, comp, name, subtext, req) {
-  //let dir = `./outputs/${req.body.projectName}`;
-  //
-  //if (!FS.existsSync(dir)) {
-  //  FS.mkdirSync(dir);
-  //}
+  let dir = `./outputs/${req.body.projectName}`;
+
+  if (!FS.existsSync(dir)) {
+    FS.mkdirSync(dir);
+  }
 
   const result = await render(
     {
@@ -149,7 +149,7 @@ async function renderLT(url, comp, name, subtext, req) {
 
 APP.post("/uploadVideo", (req, res) => {
   console.log("server", req.body);
-  res.sendStatus(200);
+  res.send("het werkt");
 });
 
 // EXPORT

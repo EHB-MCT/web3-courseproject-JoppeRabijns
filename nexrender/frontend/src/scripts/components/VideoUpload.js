@@ -1,8 +1,9 @@
 import React from "react";
 import Uploadzone from "../molecules/UploadZone";
 import { useState } from "react";
-
 import "./styles/VideoUpload.css";
+
+const axios = require("axios").default;
 
 export default function VideoUpload() {
   const [isLoading, setIsLoading] = useState(false);
@@ -10,19 +11,13 @@ export default function VideoUpload() {
   function postData(files) {
     console.log({ files });
     try {
-      fetch("http://localhost:5000/upload", {
-        method: "POST",
-        headers: {
-          //"Content-Type": "application/json",
-          //"Content-Type": "multipart/form-data",
+      axios({
+        method: "post",
+        url: "http://localhost:5000/upload",
+        data: {
+          files: files,
         },
-        body: files,
-      })
-        .then((data) => data.json())
-        .then((data) => {
-          loading(false);
-          console.log(data);
-        });
+      });
     } catch (err) {
       console.log(err);
     }

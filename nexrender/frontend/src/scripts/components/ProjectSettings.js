@@ -5,10 +5,10 @@ import "./styles/ProjectSettings.css";
 
 export default function ProjectSettings({ projectName, currentName }) {
   async function createFolder(input) {
-    //const name = input.target.value;
-    //projectName(name);
+    const name = input.target.value;
+    projectName(name);
     //
-    //sessionStorage.setItem("name", name);
+    sessionStorage.setItem("projectName", name);
     //
     const req = await fetch("http://localhost:5000/makeFolder", {
       method: "POST",
