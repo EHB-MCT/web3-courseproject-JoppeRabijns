@@ -8,30 +8,24 @@ export default function LowerThirds() {
   const [name, setName] = useState();
   const [title, setTitle] = useState();
 
-  function renderLT() {
+  function renderLT(ltNumber) {
     try {
-      fetch(`http://localhost:5000/lowerthirds/${number}`, {
+      fetch(`http://localhost:5000/lowerthirds/${ltNumber}`, {
         method: "POST",
-        body: {
-          name,
-          title,
+        headers: {
+          "Content-Type": "application/json",
         },
-      })
-        .then((data) => data.json())
-        .then((data) => {
-          console.log(data);
-        });
+        body: JSON.stringify({
+          name: name,
+          title: title,
+        }),
+      }).then((data) => {
+        console.log(data);
+      });
     } catch (err) {
       console.log(err);
     }
   }
-  function getGifs() {
-    fetch("http://localhost:5000/lowerThirds");
-  }
-
-  useEffect(() => {
-    getGifs();
-  });
 
   function makeName(item) {
     setName(item.target.value);
@@ -49,34 +43,25 @@ export default function LowerThirds() {
         <TextInput value="Function or organisation" done={makeTitle} />
       </div>
       <div className="lowerthirds">
-        <div
-          className="lowerthirdsDiv"
-          style={number === 1 ? { border: "10px solid blue" } : {}}
-        >
+        <div className="lowerthirdsDiv">
           <img
             src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT1_1_ztqysq.gif"
             alt=""
-            onClick={() => setNumber(1)}
+            onClick={() => renderLT(1)}
           />
         </div>
-        <div
-          className="lowerthirdsDiv"
-          style={number === 2 ? { border: "10px solid blue" } : {}}
-        >
+        <div className="lowerthirdsDiv">
           <img
             src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT2_2_jyhpm1.gif"
             alt=""
-            onClick={() => setNumber(2)}
+            onClick={() => renderLT(2)}
           />
         </div>
-        <div
-          className="lowerthirdsDiv"
-          style={number === 3 ? { border: "10px solid blue" } : {}}
-        >
+        <div className="lowerthirdsDiv">
           <img
             src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT3_awcluh.gif"
             alt=""
-            onClick={() => setNumber(3)}
+            onClick={() => renderLT(3)}
           />
         </div>
       </div>
