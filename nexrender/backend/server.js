@@ -32,8 +32,7 @@ APP.post("/render", (req, res) => {
 
   mergedVideo
     .mergeToFile(
-      "./mergedVideo.mp4",
-      "/Users/joppe.rabijns/WEB3/nexrender/backend/"
+      `/Users/joppe.rabijns/WEB3/nexrender/backend/outputs/${req.body.projectName}/rendered.mp4`
     )
     .on("progress", function (progress) {
       console.log(`${progress.percent}`);
@@ -43,6 +42,7 @@ APP.post("/render", (req, res) => {
     })
     .on("end", function () {
       console.log("finished");
+      res.sendStatus(200);
     });
 });
 
@@ -76,6 +76,12 @@ APP.post("/lowerthirds/:id", (req, res) => {
 });
 
 async function renderLT(url, comp, name, subtext, req) {
+  let fs = require("fs");
+  let dir = `./outputs/${req.body.projectName}`;
+
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
   const result = await render(
     {
       template: {
@@ -119,9 +125,7 @@ async function renderLT(url, comp, name, subtext, req) {
           },
           {
             module: "@nexrender/action-copy",
-            output: `/Users/joppe.rabijns/WEB3/nexrender/outputs/encoded${
-              Math.random() * 100
-            }.mov`,
+            output: `/Users/joppe.rabijns/WEB3/nexrender/backend/outputs/${req.body.projectName}/LT.mov`,
           },
         ],
       },
@@ -135,20 +139,6 @@ async function renderLT(url, comp, name, subtext, req) {
 
 APP.post("/upload", (req, res) => {
   console.log(req.files.foo);
-});
-
-APP.get("/lowerThirds", (req, res) => {
-  console.log("LowerThirds called");
-  FS.readdir("./assets/lowerThirds", (error, files) => {
-    files.forEach((file) => {
-      console.log(file);
-      //console.log(FS.readFile(file));
-    });
-    res.send(files);
-  });
-  //CLOUDINARY.api.resources((err, result) => {
-  //  console.log(result, err);
-  //});
 });
 
 // EXPORT

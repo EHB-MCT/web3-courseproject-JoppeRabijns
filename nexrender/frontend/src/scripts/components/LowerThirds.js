@@ -4,34 +4,42 @@ import TextInput from "../molecules/TextInput";
 import "./styles/LowerThirds.css";
 
 export default function LowerThirds() {
-  const [number, setNumber] = useState();
   const [name, setName] = useState();
   const [title, setTitle] = useState();
 
   function renderLT(ltNumber) {
-    try {
-      fetch(`http://localhost:5000/lowerthirds/${ltNumber}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: name,
-          title: title,
-        }),
-      }).then((data) => {
-        console.log(data);
-      });
-    } catch (err) {
-      console.log(err);
+    if (name == undefined || title == undefined) {
+      console.log("fields are empty");
+    } else {
+      try {
+        fetch(`http://localhost:5000/lowerthirds/${ltNumber}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            title: title,
+            projectName: sessionStorage.getItem("projectName"),
+          }),
+        }).then((data) => {
+          console.log(data);
+        });
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
 
   function makeName(item) {
+    console.log(name);
+    console.log(title);
     setName(item.target.value);
   }
 
   function makeTitle(item) {
+    console.log(name);
+    console.log(title);
     setTitle(item.target.value);
   }
 
