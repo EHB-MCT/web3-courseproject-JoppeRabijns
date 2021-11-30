@@ -4,40 +4,42 @@ import TextInput from "../molecules/TextInput";
 import "./styles/LowerThirds.css";
 
 export default function LowerThirds() {
-  const [number, setNumber] = useState();
   const [name, setName] = useState();
   const [title, setTitle] = useState();
 
-  function renderLT() {
-    try {
-      fetch(`http://localhost:5000/lowerthirds/${number}`, {
-        method: "POST",
-        body: {
-          name,
-          title,
-        },
-      })
-        .then((data) => data.json())
-        .then((data) => {
+  function renderLT(ltNumber) {
+    if (name == undefined || title == undefined) {
+      console.log("fields are empty");
+    } else {
+      try {
+        fetch(`http://localhost:5000/lowerthirds/${ltNumber}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            title: title,
+            projectName: sessionStorage.getItem("projectName"),
+          }),
+        }).then((data) => {
           console.log(data);
         });
-    } catch (err) {
-      console.log(err);
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
-  function getGifs() {
-    fetch("http://localhost:5000/lowerThirds");
-  }
-
-  useEffect(() => {
-    getGifs();
-  });
 
   function makeName(item) {
+    console.log(name);
+    console.log(title);
     setName(item.target.value);
   }
 
   function makeTitle(item) {
+    console.log(name);
+    console.log(title);
     setTitle(item.target.value);
   }
 
@@ -49,34 +51,25 @@ export default function LowerThirds() {
         <TextInput value="Function or organisation" done={makeTitle} />
       </div>
       <div className="lowerthirds">
-        <div
-          className="lowerthirdsDiv"
-          style={number === 1 ? { border: "10px solid blue" } : {}}
-        >
+        <div className="lowerthirdsDiv">
           <img
             src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT1_1_ztqysq.gif"
             alt=""
-            onClick={() => setNumber(1)}
+            onClick={() => renderLT(1)}
           />
         </div>
-        <div
-          className="lowerthirdsDiv"
-          style={number === 2 ? { border: "10px solid blue" } : {}}
-        >
+        <div className="lowerthirdsDiv">
           <img
             src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT2_2_jyhpm1.gif"
             alt=""
-            onClick={() => setNumber(2)}
+            onClick={() => renderLT(2)}
           />
         </div>
-        <div
-          className="lowerthirdsDiv"
-          style={number === 3 ? { border: "10px solid blue" } : {}}
-        >
+        <div className="lowerthirdsDiv">
           <img
             src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT3_awcluh.gif"
             alt=""
-            onClick={() => setNumber(3)}
+            onClick={() => renderLT(3)}
           />
         </div>
       </div>
