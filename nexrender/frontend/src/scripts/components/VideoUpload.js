@@ -1,29 +1,29 @@
-import React from 'react';
-import Uploadzone from '../molecules/UploadZone';
-import { useState } from 'react';
+import React from "react";
+import Uploadzone from "../molecules/UploadZone";
+import { useState } from "react";
 
-import './styles/VideoUpload.css';
+import "./styles/VideoUpload.css";
 
-export default function VideoUpload(){
-
+export default function VideoUpload() {
   const [isLoading, setIsLoading] = useState(false);
 
   function postData(files) {
-    console.log(files);
+    console.log({ files });
     try {
-      fetch('http://localhost:5000/uploadVideo', {
+      fetch("http://localhost:5000/upload", {
         method: "POST",
-        // headers: {
-        //   'Content-Type': 'application/json'
-        // },
-        body: files,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: { files },
       })
-      .then(data => data.json())
-      .then(data => {
-        console.log(data);
-      });
-    } catch(err) {
-      console.log(err)
+        .then((data) => data.json())
+        .then((data) => {
+          loading(false);
+          console.log(data);
+        });
+    } catch (err) {
+      console.log(err);
     }
   }
 
@@ -31,13 +31,13 @@ export default function VideoUpload(){
     setIsLoading(bool);
   }
 
-  return(
+  return (
     <div className="videoContainer">
-      {!isLoading ? 
-        <Uploadzone loading={loading} files={postData}/>
-        :
+      {!isLoading ? (
+        <Uploadzone loading={loading} files={postData} />
+      ) : (
         <p>Please wait...</p>
-      }
+      )}
     </div>
-  )
+  );
 }

@@ -4,7 +4,6 @@ const CORS = require("cors");
 const FS = require("fs");
 const APP = EXPRESS();
 const { checkAddVideoBody } = require("./helpers/helper");
-const CLOUDINARY = require("./config/cloudinary");
 const { render } = require("@nexrender/core");
 let fluent_ffmpeg = require("fluent-ffmpeg");
 
@@ -134,22 +133,8 @@ async function renderLT(url, comp, name, subtext, req) {
   );
 }
 
-APP.post("/uploadVideo", (req, res) => {
-  console.log(req);
-  if (!checkAddVideoBody(req.body)) return res.status(400).send("Invalid data");
-  return res.sendStatus(200);
-  //CLOUDINARY
-  //  .uploader
-  //  .upload(req.body.path, {
-  //    resource_type: "video",
-  //    // TODO: Add view before video upload screen to enter project name.
-  //    //public_id: req.body.serverPath //"myfolder/mysubfolder/my_dog",
-  //    overwrite: true
-  //  }, (err, res) => {
-  //    if (err)
-  //      console.log(err);
-  //    res.status(200).send(res);
-  //  });
+APP.post("/upload", (req, res) => {
+  console.log(req.files.foo);
 });
 
 APP.get("/lowerThirds", (req, res) => {
