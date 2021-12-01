@@ -6,8 +6,10 @@ import "./styles/LowerThirds.css";
 export default function LowerThirds() {
   const [name, setName] = useState();
   const [title, setTitle] = useState();
+  const [loading, setLoading] = useState(false);
 
   function renderLT(ltNumber) {
+    setLoading(true);
     if (name == undefined || title == undefined) {
       console.log("fields are empty");
     } else {
@@ -24,6 +26,7 @@ export default function LowerThirds() {
           }),
         }).then((data) => {
           console.log(data);
+          setLoading(false);
         });
       } catch (err) {
         console.log(err);
@@ -44,35 +47,41 @@ export default function LowerThirds() {
   }
 
   return (
-    <div>
-      <div className="lowerContainer">
-        <TextInput value="Your name" done={makeName} /> <br />
-        <br />
-        <TextInput value="Function or organisation" done={makeTitle} />
-      </div>
-      <div className="lowerthirds">
-        <div className="lowerthirdsDiv">
-          <img
-            src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT1_1_ztqysq.gif"
-            alt=""
-            onClick={() => renderLT(1)}
-          />
+    <>
+      {loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div>
+          <div className="lowerContainer">
+            <TextInput value="Your name" done={makeName} /> <br />
+            <br />
+            <TextInput value="Function or organisation" done={makeTitle} />
+          </div>
+          <div className="lowerthirds">
+            <div className="lowerthirdsDiv">
+              <img
+                src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT1_1_ztqysq.gif"
+                alt=""
+                onClick={() => renderLT(1)}
+              />
+            </div>
+            <div className="lowerthirdsDiv">
+              <img
+                src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT2_2_jyhpm1.gif"
+                alt=""
+                onClick={() => renderLT(2)}
+              />
+            </div>
+            <div className="lowerthirdsDiv">
+              <img
+                src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT3_awcluh.gif"
+                alt=""
+                onClick={() => renderLT(3)}
+              />
+            </div>
+          </div>
         </div>
-        <div className="lowerthirdsDiv">
-          <img
-            src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT2_2_jyhpm1.gif"
-            alt=""
-            onClick={() => renderLT(2)}
-          />
-        </div>
-        <div className="lowerthirdsDiv">
-          <img
-            src="https://res.cloudinary.com/pitch-fx/image/upload/v1637577270/GIF/LT3_awcluh.gif"
-            alt=""
-            onClick={() => renderLT(3)}
-          />
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
