@@ -9,9 +9,7 @@ export default function ProjectSettings({ projectName, currentName }) {
   async function createFolder(input) {
     const name = input.target.value;
     projectName(name);
-    //
     sessionStorage.setItem("projectName", name);
-    //
     try {
       axios({
         method: "post",
