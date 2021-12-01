@@ -1,13 +1,14 @@
-import React from 'react';
-
-import './styles/Download.css'
+import React from "react";
+import "./styles/Download.css";
 
 export default function Download() {
-  return(
-    <div>
-      <p>
-        Download
-      </p>
-    </div>
-  )
+  let video = sessionStorage.getItem("url");
+  return (
+    <>
+      <video width="750" height="500" controls>
+        <source src={video} type="video/mp4" />
+      </video>
+      <h2>{video}</h2>
+    </>
+  );
 }
