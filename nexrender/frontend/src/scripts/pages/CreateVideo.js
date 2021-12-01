@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import AudioUpload from '../components/AudioUpload';
-import LowerThirds from '../components/LowerThirds';
-import Editor from '../components/Editor';
-import VideoUpload from '../components/VideoUpload';
-import ProjectSettings from '../components/ProjectSettings';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import AudioUpload from "../components/AudioUpload";
+import LowerThirds from "../components/LowerThirds";
+import Editor from "../components/Editor";
+import VideoUpload from "../components/VideoUpload";
+import ProjectSettings from "../components/ProjectSettings";
+import { Link } from "react-router-dom";
 
-import './styles/CreateVideo.css'
-import CustomButton from '../molecules/Button';
+import "./styles/CreateVideo.css";
+import CustomButton from "../molecules/Button";
 
-export default class CreateVideo extends Component{
+export default class CreateVideo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      projectName: '',
+      projectName: "",
       videoPaths: [],
-      text: '',
+      text: "",
       audioPaths: [],
       originalAudio: true,
       step: 1,
       totalSteps: 0,
       components: [],
       stepNames: [],
-    }
+    };
   }
 
   componentDidMount() {
@@ -35,12 +35,12 @@ export default class CreateVideo extends Component{
     ];
 
     const components = [
-      <ProjectSettings projectName={this.setProjectName.bind(this)}/>,
+      <ProjectSettings projectName={this.setProjectName.bind(this)} />,
       <VideoUpload />,
       <AudioUpload />,
       <LowerThirds />,
-      <Editor />
-    ]
+      <Editor />,
+    ];
 
     const totalSteps = stepNames.length;
 
@@ -48,37 +48,35 @@ export default class CreateVideo extends Component{
       stepNames: stepNames,
       totalSteps: totalSteps,
       components: components,
-    })
+    });
   }
 
   setProjectName(name) {
     this.setState({
-      projectName: name
-    })
+      projectName: name,
+    });
   }
 
   next() {
     const newStep = this.state.step + 1;
     this.setState({
-      step: newStep
-    })
+      step: newStep,
+    });
   }
 
   previous() {
     const newStep = this.state.step - 1;
     this.setState({
-      step: newStep
-    })
+      step: newStep,
+    });
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className="createContainer">
-        {
-          this.state.projectName && this.state.step !== 1 ?
-            <h1 className="projectTitle">{this.state.projectName}</h1>
-          : null
-        }
+        {this.state.projectName && this.state.step !== 1 ? (
+          <h1 className="projectTitle">{this.state.projectName}</h1>
+        ) : null}
         <h1 className="createTitle">
           {this.state.stepNames[this.state.step - 1]}
         </h1>
@@ -89,20 +87,18 @@ export default class CreateVideo extends Component{
         PREVIOUS AND NEXT BUTTONS
         --------------------- */}
         <div>
-          {this.state.step > 1 ?
-            <CustomButton onClick={this.previous.bind(this)} value='GO BACK' />
-            :
-            undefined
-          }
-          {this.state.step <= this.state.totalSteps - 1 ?
-            <CustomButton onClick={this.next.bind(this)} value='next'/>
-            :
-            <Link to='/download'>
-              <CustomButton value='render' />
+          {this.state.step > 1 ? (
+            <CustomButton onClick={this.previous.bind(this)} value="GO BACK" />
+          ) : undefined}
+          {this.state.step <= this.state.totalSteps - 1 ? (
+            <CustomButton onClick={this.next.bind(this)} value="next" />
+          ) : (
+            <Link to="/download">
+              <CustomButton value="render" />
             </Link>
-          }
+          )}
         </div>
       </div>
-    )
+    );
   }
 }
