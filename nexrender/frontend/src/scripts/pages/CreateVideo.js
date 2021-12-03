@@ -94,7 +94,7 @@ export default class CreateVideo extends Component {
             <CustomButton onClick={this.next.bind(this)} value="next" />
           ) : (
             <Link to="/download">
-              <CustomButton value="render" />
+              <CustomButton value="Download" />
             </Link>
           )}
         </div>

@@ -1,11 +1,13 @@
 const { render } = require("@nexrender/core");
 
-async function renderLT(url, comp, name, subtext, req) {
+async function renderLT(url, comp, name, subtext, req, res) {
   const result = await render(
     {
       template: {
         src: `${url}`,
         composition: `${comp}`,
+        outputModule: "HQWA",
+        outputExt: "mov",
       },
       assets: [
         {
@@ -39,12 +41,12 @@ async function renderLT(url, comp, name, subtext, req) {
         postrender: [
           {
             module: "@nexrender/action-encode",
-            preset: "mov",
-            output: "encoded.mov",
+            preset: "mp4",
+            output: "encoded.mp4",
           },
           {
             module: "@nexrender/action-copy",
-            output: `/Users/joppe.rabijns/WEB3/nexrender/backend/outputs/${req.body.projectName}/LT.mov`,
+            output: `/Users/joppe.rabijns/WEB3/nexrender/backend/outputs/${req.body.projectName}/LT.mp4`,
           },
         ],
       },
@@ -53,7 +55,9 @@ async function renderLT(url, comp, name, subtext, req) {
       binary: "/Applications/AdobeAfterEffects/aerender",
       skipCleanup: true,
     }
-  );
+  ).then(() => {
+    return res.sendStatus(200);
+  });
 }
 
 module.exports = renderLT;

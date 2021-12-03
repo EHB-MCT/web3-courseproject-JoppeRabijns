@@ -1,9 +1,46 @@
-import React from 'react';
+import React, { useState } from "react";
+import CustomButton from "../molecules/Button";
+import "./styles/Editor.css";
+const axios = require("axios").default;
 
-import './styles/Editor.css';
+export default function Editor() {
+  const [loading, setLoading] = useState(false);
 
-export default function Editor(){
-  return(
-    <p>Editor</p>
-  )
+  async function render(input) {
+    setLoading(true);
+    let projectName = sessionStorage.getItem("projectName");
+    try {
+      axios({
+        method: "post",
+        url: "http://localhost:5000/render",
+        data: {
+          videoNames: [
+            {
+              url: "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638042173/teasertijl_nprvcg.mp4",
+              inTime: "00:02.000",
+            },
+            {
+              url: "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638042168/EKSEL_le6ass.mp4",
+              inTime: "00:00.500",
+            },
+          ],
+          projectName: projectName,
+        },
+      }).then((response) => {
+        sessionStorage.setItem("url", response.data);
+        setLoading(false);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  return (
+    <>
+      {loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <CustomButton onClick={render} value="render" />
+      )}
+    </>
+  );
 }
