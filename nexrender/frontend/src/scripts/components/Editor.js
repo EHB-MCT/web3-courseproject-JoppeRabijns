@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./styles/Editor.css";
 const axios = require("axios").default;
 
 export default function Editor() {
+  const [loading, setLoading] = useState(false);
+
   async function render(input) {
+    setLoading(true); 
     let projectName = sessionStorage.getItem("projectName");
     try {
       axios({
@@ -25,6 +28,7 @@ export default function Editor() {
         },
       }).then((response) => {
         sessionStorage.setItem("url", response.data);
+        setLoading(false);
       });
     } catch (err) {
       console.log(err);
@@ -32,7 +36,11 @@ export default function Editor() {
   }
   return (
     <>
-      <button onClick={render}> render </button>
+      {loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <button onClick={render}> render </button>
+      )}
     </>
   );
 }

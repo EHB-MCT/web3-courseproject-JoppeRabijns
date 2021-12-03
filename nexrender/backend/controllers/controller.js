@@ -101,7 +101,8 @@ const lowerThirds = (req, res) => {
       "LT1",
       "LT1->LT_01->LT01_Line1->Text01_LT01",
       "LT1->LT_01->LT01_Line2->Text02_LT01",
-      req
+      req,
+      res
     );
   } else if (req.params.id == 2) {
     RENDERLT(
@@ -109,7 +110,8 @@ const lowerThirds = (req, res) => {
       "LT2",
       "LT2->Lower third 08",
       "LT2->Lower third 08",
-      req
+      req,
+      res
     );
   } else if (req.params.id == 3) {
     RENDERLT(
@@ -117,10 +119,10 @@ const lowerThirds = (req, res) => {
       "Snow LT maincomp",
       "Snow LT maincomp->Lower Third",
       "Snow LT maincomp->Lower Third",
-      req
+      req,
+      res
     );
   }
-  res.sendStatus(200);
 };
 
 const uploadVideo = (req, res) => {

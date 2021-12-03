@@ -1,6 +1,6 @@
 const { render } = require("@nexrender/core");
 
-async function renderLT(url, comp, name, subtext, req) {
+async function renderLT(url, comp, name, subtext, req, res) {
   const result = await render(
     {
       template: {
@@ -55,7 +55,9 @@ async function renderLT(url, comp, name, subtext, req) {
       binary: "/Applications/AdobeAfterEffects/aerender",
       skipCleanup: true,
     }
-  );
+  ).then(() => {
+    return res.sendStatus(200);
+  });
 }
 
 module.exports = renderLT;
