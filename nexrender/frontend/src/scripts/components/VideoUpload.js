@@ -6,6 +6,12 @@ import "react-dropzone-uploader/dist/styles.css";
 const axios = require("axios").default;
 
 export default function VideoUpload() {
+  function uploadFiles(e, data) {
+    e.preventDefault();
+    console.log("event", e);
+    console.log("data", data);
+  }
+
   return (
     <div className="upload">
       <form
@@ -13,6 +19,7 @@ export default function VideoUpload() {
         encType="multipart/form-data"
         action="http://localhost:5000/uploadVideo"
         method="post"
+        onSubmit={uploadFiles}
       >
         <label htmlFor="model"> 3d model </label>
         <input
