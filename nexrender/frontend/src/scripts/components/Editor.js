@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import CustomButton from "../molecules/Button";
 import "./styles/Editor.css";
 const axios = require("axios").default;
 
@@ -7,7 +7,7 @@ export default function Editor() {
   const [loading, setLoading] = useState(false);
 
   async function render(input) {
-    setLoading(true); 
+    setLoading(true);
     let projectName = sessionStorage.getItem("projectName");
     try {
       axios({
@@ -39,7 +39,7 @@ export default function Editor() {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <button onClick={render}> render </button>
+        <CustomButton onClick={render} value="render" />
       )}
     </>
   );
