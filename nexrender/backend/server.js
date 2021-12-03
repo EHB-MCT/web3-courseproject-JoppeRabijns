@@ -8,7 +8,7 @@ const MONGOOSE = require("mongoose");
 
 // MIDDLEWARE
 APP.use(CORS());
-APP.use("/uploads", EXPRESS.static("./outputs"));
+APP.use("/outputs", EXPRESS.static("./outputs"));
 APP.use(
   BODYPARSER.urlencoded({
     extended: true,

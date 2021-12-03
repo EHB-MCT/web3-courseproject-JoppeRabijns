@@ -8,7 +8,6 @@ export default function Download() {
       <video width="750" height="500" controls>
         <source src={video} type="video/mp4" />
       </video>
-      <h2>{video}</h2>
     </>
   );
 }
