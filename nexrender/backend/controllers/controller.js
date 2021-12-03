@@ -15,7 +15,7 @@ const storage = MULTER.diskStorage({
   },
 });
 
-const uploadModel = MULTER({
+const uploadMiddle = MULTER({
   storage: storage,
   fileFilter: (req, file, cb) => {
     console.log("uploadModelMiddleware", file);
@@ -87,6 +87,7 @@ const render = (req, res) => {
 };
 
 const createProject = (req, res) => {
+  videoNames.length = 0;
   const dir = `./outputs/${req.body.projectName}`;
 
   if (!FS.existsSync(dir)) {
@@ -129,7 +130,7 @@ const lowerThirds = (req, res) => {
 const uploadVideo = (req, res) => {
   console.log("videoUpload", req.body);
   let videoPaths = videoNames.map((name) => `http://localhost:5000/${name}`);
-  console.log(newArray);
+  console.log(videoNames);
   MODEL.findOne({ title: req.body.title }, (err, data) => {
     if (!data) {
       const newModel = new MODEL({
@@ -139,12 +140,17 @@ const uploadVideo = (req, res) => {
 
       newModel.save((err, data) => {
         if (err) return res.json({ Error: err });
+        return res.send(data);
       });
-      return res.sendStatus("200");
     } else {
-      return res.json({ message: "Model already exists" });
+      return res.json({ message: "Project already exists" });
     }
   });
+};
+
+const getVideos = (req, res) => {
+  console.log(req.params.title);
+  res.sendStatus(200);
 };
 
 module.exports = {
@@ -152,5 +158,6 @@ module.exports = {
   createProject,
   lowerThirds,
   uploadVideo,
-  uploadModel,
+  uploadMiddle,
+  getVideos,
 };
