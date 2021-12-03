@@ -4,7 +4,7 @@ const FFMPEG = require("fluent-ffmpeg");
 const FS = require("fs");
 const MODEL = require("../models/model");
 
-let videoNames = [];
+const videoNames = [];
 
 const storage = MULTER.diskStorage({
   destination: function (req, file, cb) {
@@ -92,13 +92,13 @@ const lowerThirds = (req, res) => {
 
 const uploadVideo = (req, res) => {
   console.log("videoUpload", req.body);
-  let newArray = videoNames.map((name) => `http://localhost:5000/${name}`);
+  let videoPaths = videoNames.map((name) => `http://localhost:5000/${name}`);
   console.log(newArray);
   MODEL.findOne({ title: req.body.title }, (err, data) => {
     if (!data) {
       const newModel = new MODEL({
         title: req.body.title,
-        video: newArray,
+        video: videoPaths,
       });
 
       newModel.save((err, data) => {
