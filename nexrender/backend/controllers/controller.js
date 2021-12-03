@@ -72,6 +72,7 @@ const render = (req, res) => {
         ],
         "tmp"
       )
+      .outputOptions(["-map 0:a"])
       .output(
         `/Users/joppe.rabijns/WEB3/nexrender/backend/outputs/${req.body.projectName}/render.mp4`
       )
