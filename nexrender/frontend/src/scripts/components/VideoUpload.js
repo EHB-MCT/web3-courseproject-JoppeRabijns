@@ -12,11 +12,11 @@ export default function VideoUpload(data) {
         action="http://localhost:5000/uploadVideo"
         method="post"
       >
-        <label htmlFor="model"> Upload your video's here </label>
+        <label htmlFor="videoFiles"> Upload your video's here </label>
         <br />
         <input
           type="file"
-          name="videofiles"
+          name="videoFiles"
           id="fileUpload"
           multiple
           accept="video/*"
