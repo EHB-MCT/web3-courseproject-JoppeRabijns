@@ -1,5 +1,4 @@
 import React from "react";
-import Dropzone from "react-dropzone-uploader";
 import "./styles/VideoUpload.css";
 import "react-dropzone-uploader/dist/styles.css";
 
@@ -17,7 +16,7 @@ export default function VideoUpload(data) {
         <input
           type="file"
           name="videoFiles"
-          id="fileUpload"
+          id="videoFiles"
           multiple
           accept="video/*"
         />

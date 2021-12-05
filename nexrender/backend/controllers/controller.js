@@ -26,7 +26,7 @@ const uploadMiddle = MULTER({
       return cb(new Error("Only .mp4, .mov format allowed!"));
     }
   },
-}).array("videofiles");
+}).array("videoFiles");
 
 const render = (req, res) => {
   let mergedVideo = FFMPEG();
@@ -127,14 +127,14 @@ const lowerThirds = (req, res) => {
 };
 
 const uploadVideo = (req, res) => {
-  let videoPaths = videoNames.map((name) => `http://localhost:5000/${name}`);
-  const formattedVideoData = videoPaths.map((videoPath) => {
+  const formattedVideoData = videoNames.map((name) => {
     return {
-      url: videoPath,
+      url: `http://localhost:5000/${name}`,
       inTime: "00:00.000",
     };
   });
-  MODEL.findOne({ title: req.body.title }, (err, data) => {
+  MODEL.findOne({ projectName: req.body.title }, (err, data) => {
+    console.log(data);
     if (!data) {
       const newModel = new MODEL({
         projectName: req.body.title,
