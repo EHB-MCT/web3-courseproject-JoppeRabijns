@@ -20,6 +20,7 @@ export default function CreateVideo() {
     <Editor previous={previous} />,
   ];
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setProjectName(sessionStorage.getItem("projectName"));
   });
