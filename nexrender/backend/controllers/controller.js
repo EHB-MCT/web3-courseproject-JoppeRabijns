@@ -18,7 +18,6 @@ const storage = MULTER.diskStorage({
 const uploadMiddle = MULTER({
   storage: storage,
   fileFilter: (req, file, cb) => {
-    console.log("uploadModelMiddleware", file);
     videoNames.push(file.originalname);
     if (file.mimetype == "video/mp4" || file.mimetype == "video/quicktime") {
       cb(null, true);
@@ -128,14 +127,18 @@ const lowerThirds = (req, res) => {
 };
 
 const uploadVideo = (req, res) => {
-  console.log("videoUpload", req.body);
   let videoPaths = videoNames.map((name) => `http://localhost:5000/${name}`);
-  console.log(videoNames);
+  const formattedVideoData = videoPaths.map((videoPath) => {
+    return {
+      url: videoPath,
+      inTime: "00:00.000",
+    };
+  });
   MODEL.findOne({ title: req.body.title }, (err, data) => {
     if (!data) {
       const newModel = new MODEL({
-        title: req.body.title,
-        video: videoPaths,
+        projectName: req.body.title,
+        videoNames: formattedVideoData,
       });
 
       newModel.save((err, data) => {
@@ -149,7 +152,6 @@ const uploadVideo = (req, res) => {
 };
 
 const getVideos = (req, res) => {
-  console.log(req.params.title);
   MODEL.findOne({ title: `${req.params.title}` }, function (err, obj) {
     console.log(obj);
   });
