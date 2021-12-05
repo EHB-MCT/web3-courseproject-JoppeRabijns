@@ -18,7 +18,6 @@ export default function Editor({ previous }) {
         url: `http://localhost:5000/videos/${projectName}`,
       }).then((response) => {
         renderVideo(response.data);
-        console.log(response.data);
       });
     } catch (err) {
       console.log(err);

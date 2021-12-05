@@ -22,7 +22,6 @@ export default function CreateVideo() {
 
   useEffect(() => {
     setProjectName(sessionStorage.getItem("projectName"));
-    console.log(projectName);
   });
 
   function next() {
