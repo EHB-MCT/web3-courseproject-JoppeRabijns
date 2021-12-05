@@ -150,7 +150,9 @@ const uploadVideo = (req, res) => {
 
 const getVideos = (req, res) => {
   console.log(req.params.title);
-  res.sendStatus(200);
+  MODEL.findOne({ title: `${req.params.title}` }, function (err, obj) {
+    console.log(obj);
+  });
 };
 
 module.exports = {

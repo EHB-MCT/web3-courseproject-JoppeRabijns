@@ -5,10 +5,25 @@ const axios = require("axios").default;
 
 export default function Editor() {
   const [loading, setLoading] = useState(false);
+  let projectName = sessionStorage.getItem("projectName");
 
-  async function render(input) {
+  async function render() {
     setLoading(true);
-    let projectName = sessionStorage.getItem("projectName");
+    try {
+      axios({
+        method: "get",
+        url: `http://localhost:5000/videos/${projectName}`,
+      }).then((response) => {
+        console.log(response.data);
+        //renderVideo(response.data);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function renderVideo(data) {
+    setLoading(true);
     try {
       axios({
         method: "post",
