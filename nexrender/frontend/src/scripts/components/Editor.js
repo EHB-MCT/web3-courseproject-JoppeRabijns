@@ -17,8 +17,8 @@ export default function Editor({ previous }) {
         method: "get",
         url: `http://localhost:5000/videos/${projectName}`,
       }).then((response) => {
-        console.log(response.data);
         renderVideo(response.data);
+        console.log(response.data);
       });
     } catch (err) {
       console.log(err);
@@ -26,23 +26,13 @@ export default function Editor({ previous }) {
   }
 
   function renderVideo(data) {
-    setLoading(true);
     try {
       axios({
         method: "post",
         url: "http://localhost:5000/render",
         data: {
-          videoNames: [
-            {
-              url: "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638042173/teasertijl_nprvcg.mp4",
-              inTime: "00:02.000",
-            },
-            {
-              url: "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638042168/EKSEL_le6ass.mp4",
-              inTime: "00:00.500",
-            },
-          ],
-          projectName: projectName,
+          videoNames: data.videoNames,
+          projectName: data.projectName,
         },
       }).then((response) => {
         sessionStorage.setItem("url", response.data);

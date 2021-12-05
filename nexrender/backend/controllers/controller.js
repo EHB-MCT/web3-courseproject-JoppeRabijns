@@ -129,7 +129,7 @@ const lowerThirds = (req, res) => {
 const uploadVideo = (req, res) => {
   const formattedVideoData = videoNames.map((name) => {
     return {
-      url: `http://localhost:5000/${name}`,
+      url: `http://localhost:5000/outputs/${name}`,
       inTime: "00:00.000",
     };
   });
@@ -152,8 +152,8 @@ const uploadVideo = (req, res) => {
 };
 
 const getVideos = (req, res) => {
-  MODEL.findOne({ title: `${req.params.title}` }, function (err, obj) {
-    console.log(obj);
+  MODEL.findOne({ projectName: `${req.params.title}` }, function (err, obj) {
+    res.json(obj);
   });
 };
 
