@@ -1,0 +1,30 @@
+.componentContainer {
+  height: 30rem;
+  min-width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.projectTitle {
+  font-weight: 300;
+  font-style: italic;
+  margin-top: -3rem;
+}
+
+.createTitle {
+  text-transform: uppercase;
+  position: absolute;
+  display: flex;
+  text-align: center;
+  top: 0;
+}

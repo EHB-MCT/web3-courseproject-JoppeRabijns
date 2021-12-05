@@ -1,9 +1,11 @@
 import React from "react";
 import TextArea from "../molecules/TextArea";
+import CustomButton from "../molecules/Button";
+import "../shared/shared.css";
 
 import "./styles/AudioUpload.css";
 
-export default function AudioUpload() {
+export default function AudioUpload({ previous, next }) {
   function translate(input) {
     console.log(input.target.value);
     fetch(
@@ -31,8 +33,13 @@ export default function AudioUpload() {
   }
 
   return (
-    <div className="audioContainer">
+    <div className="componentContainer">
+      <h1 className="createTitle">Add your audio tracks</h1>
       <TextArea done={translate} />
+      <div className="buttonContainer">
+        <CustomButton onClick={previous} value="go back" />
+        <CustomButton onClick={next} value="next" />
+      </div>
     </div>
   );
 }

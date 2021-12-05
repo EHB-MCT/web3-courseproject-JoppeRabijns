@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TextInput from "../molecules/TextInput";
+import CustomButton from "../molecules/Button";
+import "../shared/shared.css";
 
 import "./styles/LowerThirds.css";
 
-export default function LowerThirds() {
+export default function LowerThirds({ previous, next }) {
   const [name, setName] = useState();
   const [title, setTitle] = useState();
   const [loading, setLoading] = useState(false);
 
   function renderLT(ltNumber) {
     setLoading(true);
-    if (name == undefined || title == undefined) {
+    if (name === undefined || title === undefined) {
       console.log("fields are empty");
+      setLoading(false);
     } else {
       try {
         fetch(`http://localhost:5000/lowerthirds/${ltNumber}`, {
@@ -27,6 +30,7 @@ export default function LowerThirds() {
         }).then((data) => {
           console.log(data);
           setLoading(false);
+          next();
         });
       } catch (err) {
         console.log(err);
@@ -47,7 +51,8 @@ export default function LowerThirds() {
   }
 
   return (
-    <>
+    <div className="componentContainer">
+      <h1 className="createTitle">Choose your lower third</h1>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
@@ -80,8 +85,12 @@ export default function LowerThirds() {
               />
             </div>
           </div>
+          <div className="buttonContainer">
+            <CustomButton onClick={previous} value="go back" />
+            <CustomButton onClick={next} value="next" />
+          </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

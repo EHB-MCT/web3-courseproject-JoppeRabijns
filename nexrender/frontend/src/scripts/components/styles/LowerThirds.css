@@ -7,7 +7,7 @@
 
 .lowerthirdsDiv {
   margin-top: 30px;
-  width: 400px;
+  width: 340px;
   height: auto;
   overflow: hidden;
   margin-bottom: 30px;
@@ -19,7 +19,7 @@
 }
 
 .lowerthirdsDiv img {
-  width: 400px;
+  width: 340px;
   height: auto;
   border-radius: 2px;
 }
@@ -27,6 +27,6 @@
 .lowerContainer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
+  justify-content: center;
+  flex-direction: row;
 }

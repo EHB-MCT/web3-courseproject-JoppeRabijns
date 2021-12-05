@@ -3,23 +3,5 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.createTitle {
-  text-transform: uppercase;
-}
-
-.createComponents {
-  height: 30rem;
-  min-width: 40rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.projectTitle {
-  padding-bottom: 2rem;
-  margin-top: -2rem;
-  font-weight: 300;
-  font-style: italic;
+  position: relative;
 }
