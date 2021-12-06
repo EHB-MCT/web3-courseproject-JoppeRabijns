@@ -1,0 +1,15 @@
+.textArea {
+  width: 25rem;
+  height: 12rem;
+  resize: none;
+  border: 1px dashed black;
+  border-radius: 12px;
+  box-sizing: border-box;
+  padding: 6px;
+}
+
+.textArea:focus,
+.textArea:target,
+.textArea:focus {
+  outline: none !important;
+}

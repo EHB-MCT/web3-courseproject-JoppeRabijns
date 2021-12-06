@@ -1,0 +1,17 @@
+.uploadForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileLabel {
+  border-radius: 12px;
+  border: 1px dotted black;
+  padding: 3rem 6rem;
+  margin-bottom: 2rem;
+}
