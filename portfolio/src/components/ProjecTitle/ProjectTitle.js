@@ -16,7 +16,10 @@ const ProjectTitle = (props) => {
       }}
     >
       <div>
-        <h6 className="projectNumber">{props.number}</h6>
+        <div className="smalls">
+          <h6 className="projectNumber">{props.number}</h6>
+          {props.new == "true" ? <h6 className="projectNew">Nieuw</h6> : <></>}
+        </div>
         <h1
           className={active ? "projectTitle active" : "projectTitle inactive"}
         >

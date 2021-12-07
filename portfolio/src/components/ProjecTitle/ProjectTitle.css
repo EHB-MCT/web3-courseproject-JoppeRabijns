@@ -27,10 +27,24 @@
 
 .project .projectNumber {
   color: #fff;
-  margin-bottom: -2em;
+  margin-bottom: -2.5em;
   margin-left: -1.5rem;
   font-size: 1rem;
   font-weight: 400;
+}
+
+.smalls {
+  position: relative;
+}
+
+.project .projectNew {
+  position: absolute;
+  color: rgb(255, 0, 0);
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  text-align: right;
+  right: -40px;
 }
 
 .project .projectCategory {
