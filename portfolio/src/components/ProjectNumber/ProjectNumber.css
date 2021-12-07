@@ -1,0 +1,9 @@
+.ProjectNumber {
+  position: absolute;
+  left: 3vw;
+  bottom: 3vh;
+  z-index: 99;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}

@@ -10,6 +10,7 @@ const ProjectTitle = (props) => {
       onMouseOver={() => {
         setActive(true);
         props.changeVideo(props.url);
+        props.changeNumber(props.number);
       }}
       onMouseOut={() => {
         setActive(false);

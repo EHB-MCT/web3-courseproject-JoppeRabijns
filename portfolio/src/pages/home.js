@@ -6,13 +6,20 @@ import projects from "../projects.json";
 
 import VideoBackground from "../components/VideoBackground/VideoBackground";
 import ProjectTitle from "../components/ProjecTitle/ProjectTitle";
+import ProjectNumber from "../components/ProjectNumber/ProjectNumber";
 
 const Home = () => {
   const [video, setVideo] = useState();
+  const [currentNumber, setCurrentNumber] = useState();
 
   function changeVideo(url) {
     setVideo(url);
   }
+
+  function changeNumber(number) {
+    setCurrentNumber(number);
+  }
+
 
   return (
     <div className="home">
@@ -24,10 +31,12 @@ const Home = () => {
             new={project.new}
             category={project.category}
             url={project.url}
+            changeNumber={changeNumber}
             changeVideo={changeVideo}
           />
         ))}
       </ScrollContainer>
+      <ProjectNumber number={currentNumber} numberLenght={projects.length} />
       <VideoBackground url={video} />
     </div>
   );
