@@ -1,0 +1,29 @@
+.home {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectTitle {
+  color: transparent;
+  font-size: 6rem;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.projectTitle:hover {
+  color: white;
+  font-size: 6rem;
+}
+
+.projectNumber {
+  color: #fff;
+  margin-bottom: -2em;
+  margin-left: -1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
