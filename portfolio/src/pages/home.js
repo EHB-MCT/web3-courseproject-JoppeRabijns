@@ -15,6 +15,8 @@ const Home = () => {
 
   return (
     <div className="home">
+      {/*       <h1 className="logo">JOPPE RABIJNS</h1>
+       */}
       <ScrollContainer className="scroll-container" vertical={false}>
         <ProjectTitle
           number="01"
@@ -32,7 +34,7 @@ const Home = () => {
         />
         <ProjectTitle
           number="03"
-          title="Mer Perdue"
+          title="La Mer Perdue"
           category="Videografie"
           url=" https://res.cloudinary.com/drxe6ukjd/video/upload/v1638890227/portfolio/ciedevleesklak_thkspu.mp4"
           changeVideo={changeVideo}
@@ -49,6 +51,13 @@ const Home = () => {
           title="pitch:fx"
           category="Code"
           url="https://res.cloudinary.com/drxe6ukjd/video/upload/v1638889879/portfolio/pitchFX_qkhia3.mov"
+          changeVideo={changeVideo}
+        />
+        <ProjectTitle
+          number="06"
+          title="Pelt-StMoritz"
+          category="Code"
+          url="https://res.cloudinary.com/drxe6ukjd/video/upload/v1638891835/portfolio/PELT_SANKTMORITZ_xmfcwh.mov"
           changeVideo={changeVideo}
         />
       </ScrollContainer>
