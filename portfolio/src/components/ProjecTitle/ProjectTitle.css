@@ -1,0 +1,43 @@
+.project {
+  min-width: 600px;
+  max-width: 600px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.project .projectTitle {
+  font-size: 5rem;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.project .active {
+  color: white;
+}
+.project .inactive {
+  color: transparent;
+}
+.project .projectTitle:hover {
+  color: white;
+}
+
+.project .projectNumber {
+  color: #fff;
+  margin-bottom: -2em;
+  margin-left: -1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.project .projectCategory {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 110%;
+  font-weight: 400;
+  margin-top: -5px;
+}
