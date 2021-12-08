@@ -7,3 +7,8 @@
   font-size: 1rem;
   font-weight: 500;
 }
+
+svg line {
+  stroke: rgb(255, 255, 255);
+  stroke-width: 3;
+}
