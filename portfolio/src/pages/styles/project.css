@@ -1,0 +1,65 @@
+.projectDiv {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleDiv {
+  text-align: center;
+  color: #fff;
+  margin-top: -10vh;
+}
+
+.titleDiv .title {
+  font-size: 8rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.titleDiv .subtitle {
+  font-size: 1.8rem;
+  margin: 0;
+  margin-top: -10px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.next,
+.prev {
+  z-index: 100;
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  bottom: 55vh;
+  border-radius: 50px;
+  border: 2px solid rgb(255, 255, 255);
+  transition: all 0.1s ease-in-out;
+}
+
+.prev {
+  left: 2vw;
+}
+
+.prev .back {
+  color: #ffffff;
+  margin: 0;
+  margin-top: 3px;
+  text-align: center;
+}
+
+.prev svg {
+  transform: scaleX(-1);
+  filter: invert();
+}
+
+.next {
+  right: 2vw;
+}
+
+.next:hover,
+.prev:hover {
+  transform: scale(1.2);
+}

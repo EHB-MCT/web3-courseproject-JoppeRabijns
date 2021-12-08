@@ -11,7 +11,14 @@ body,
   cursor: none;
 }
 
+::selection {
+  background: #1a1a1a;
+}
+::-moz-selection {
+  background: #1a1a1a;
+}
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #1a1a1a; /* #0f1010*/
 }
+

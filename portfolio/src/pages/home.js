@@ -20,12 +20,12 @@ const Home = () => {
     setCurrentNumber(number);
   }
 
-
   return (
     <div className="home">
       <ScrollContainer className="scroll-container" vertical={false}>
         {projects.map((project) => (
           <ProjectTitle
+            key={project.number}
             number={project.number}
             title={project.title}
             new={project.new}
