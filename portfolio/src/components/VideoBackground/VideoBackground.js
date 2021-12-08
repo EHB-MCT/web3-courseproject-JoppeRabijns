@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./videoBackground.css";
 
 const VideoBackground = (props) => {
+  const [animate, setAnimate] = useState(false);
+
   return (
     <video
       autoPlay

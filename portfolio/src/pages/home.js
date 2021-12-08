@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
 
+import Slider from "react-slick";
+
 import "./styles/home.css";
 import projects from "../projects.json";
 
@@ -9,8 +11,8 @@ import ProjectTitle from "../components/ProjecTitle/ProjectTitle";
 import ProjectNumber from "../components/ProjectNumber/ProjectNumber";
 
 const Home = () => {
-  const [video, setVideo] = useState();
-  const [currentNumber, setCurrentNumber] = useState();
+  const [video, setVideo] = useState(projects[0].url);
+  const [currentNumber, setCurrentNumber] = useState("01");
 
   function changeVideo(url) {
     setVideo(url);
@@ -20,9 +22,18 @@ const Home = () => {
     setCurrentNumber(number);
   }
 
+  const settings = {
+    infinite: true,
+    speed: 500,
+    lazyLoad: true,
+    accessibility: true,
+    slidesToShow: Math.round(window.innerWidth / 750),
+    slidesToScroll: 1,
+  };
+
   return (
     <div className="home">
-      <ScrollContainer className="scroll-container" vertical={false}>
+      <Slider {...settings}>
         {projects.map((project) => (
           <ProjectTitle
             key={project.number}
@@ -35,8 +46,7 @@ const Home = () => {
             changeVideo={changeVideo}
           />
         ))}
-      </ScrollContainer>
-      <ProjectNumber number={currentNumber} numberLenght={projects.length} />
+      </Slider>
       <VideoBackground url={video} />
     </div>
   );

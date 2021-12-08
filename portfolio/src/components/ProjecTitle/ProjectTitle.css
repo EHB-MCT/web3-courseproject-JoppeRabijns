@@ -1,6 +1,6 @@
 .project {
-  min-width: 650px;
-  max-width: 650px;
+  /*   min-width: 650px;
+  max-width: 650px; */
   height: 100vh;
   display: flex;
   justify-content: center;
