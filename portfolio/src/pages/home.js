@@ -14,6 +14,8 @@ const Home = () => {
   const [video, setVideo] = useState(projects[0].url);
   const [currentNumber, setCurrentNumber] = useState("01");
 
+  const [width, setWidth] = useState("650px");
+
   function changeVideo(url) {
     setVideo(url);
   }
@@ -27,15 +29,17 @@ const Home = () => {
     speed: 500,
     lazyLoad: true,
     accessibility: true,
-    slidesToShow: Math.round(window.innerWidth / 750),
+    slidesToShow: Math.round(window.innerWidth / 550),
     slidesToScroll: 1,
+    variableWidth: true,
   };
 
   return (
     <div className="home">
-      <Slider {...settings}>
+      <Slider {...settings} className="slider">
         {projects.map((project) => (
           <ProjectTitle
+            style={{ width: width }}
             key={project.number}
             number={project.number}
             title={project.title}
@@ -48,6 +52,7 @@ const Home = () => {
         ))}
       </Slider>
       <VideoBackground url={video} />
+      <ProjectNumber numberLenght={projects.length} number={currentNumber} />
     </div>
   );
 };
