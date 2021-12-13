@@ -26,23 +26,3 @@
     opacity: 0;
   }
 }
-
-.navigation {
-  position: absolute;
-  font-family: "Open Sans", sans-serif;
-  text-decoration: none;
-  right: 3vw;
-  top: 3vh;
-  z-index: 99;
-}
-
-.navigation .link {
-  color: #fff;
-  font-size: 17px;
-  margin-left: 50px;
-  font-weight: 500;
-}
-
-.navigation .link:hover {
-  border-bottom: 3px solid #fff;
-}

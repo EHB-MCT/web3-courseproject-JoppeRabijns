@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 import Hero from "./hero";
 
@@ -8,12 +8,12 @@ const App = () => {
     <Router>
       <div>
         <nav className="navigation">
-          <Link className="link" to="/">
+          <NavLink exact activeClassName="active" className="link" to="/">
             Home
-          </Link>
-          <Link className="link" to="/contact">
+          </NavLink>
+          <NavLink activeClassName="active" className="link" to="/contact">
             Contact
-          </Link>
+          </NavLink>
         </nav>
         <Hero />
       </div>
