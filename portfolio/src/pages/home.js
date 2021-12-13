@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import ScrollContainer from "react-indiana-drag-scroll";
-
 import Slider from "react-slick";
 
 import "./styles/home.css";
@@ -9,11 +7,11 @@ import projects from "../projects.json";
 import VideoBackground from "../components/VideoBackground/VideoBackground";
 import ProjectTitle from "../components/ProjecTitle/ProjectTitle";
 import ProjectNumber from "../components/ProjectNumber/ProjectNumber";
+import Socials from "../components/Socials/Socials";
 
-const Home = () => {
+const Home = ({ isFirstMount }) => {
   const [video, setVideo] = useState(projects[0].url);
   const [currentNumber, setCurrentNumber] = useState("01");
-  const [width, setWidth] = useState("650px");
 
   function changeVideo(url) {
     setVideo(url);
@@ -29,7 +27,6 @@ const Home = () => {
     lazyLoad: true,
     accessibility: true,
     slidesToShow: Math.round(window.innerWidth / 550),
-    slidesToScroll: 1,
     variableWidth: true,
   };
 
@@ -38,7 +35,7 @@ const Home = () => {
       <Slider {...settings} className="slider">
         {projects.map((project) => (
           <ProjectTitle
-            style={{ width: width }}
+            style={{ width: "650px" }}
             key={project.number}
             number={project.number}
             title={project.title}
@@ -52,6 +49,7 @@ const Home = () => {
       </Slider>
       <VideoBackground url={video} number={currentNumber} />
       <ProjectNumber numberLenght={projects.length} number={currentNumber} />
+      <Socials />
     </div>
   );
 };

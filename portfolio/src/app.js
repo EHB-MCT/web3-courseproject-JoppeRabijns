@@ -7,10 +7,14 @@ const App = () => {
   return (
     <Router>
       <div>
-        {/*  <nav>
-          <Link to="/">Home</Link>
-          <Link to="/">Other</Link>
-        </nav> */}
+        <nav className="navigation">
+          <Link className="link" to="/">
+            Home
+          </Link>
+          <Link className="link" to="/contact">
+            Contact
+          </Link>
+        </nav>
         <Hero />
       </div>
     </Router>

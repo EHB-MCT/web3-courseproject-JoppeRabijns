@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
+
 import "./pages/styles/hero.css";
 
 import Home from "./pages/home";
@@ -7,6 +8,7 @@ import Project from "./pages/project";
 
 const Hero = () => {
   const location = useLocation();
+
   const [displayLocation, setDisplayLocation] = useState(location);
   const [transitionStage, setTransistionStage] = useState("fadeIn");
 
@@ -25,8 +27,9 @@ const Hero = () => {
       }}
     >
       <Switch location={displayLocation}>
-        <Route exact path="/" component={Home} />
+        <Route path="/" exact component={Home} />
         <Route path="/project/:number" component={Project} />
+        <Route path="*" component={Home} />
       </Switch>
     </div>
   );

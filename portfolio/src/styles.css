@@ -7,8 +7,6 @@ body,
   padding: 0;
   outline: none;
   overflow: hidden;
-  width: 100vw;
-  height: 100vh;
   cursor: none;
 }
 
@@ -18,7 +16,10 @@ body,
 ::-moz-selection {
   background: #1a1a1a;
 }
+
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #1a1a1a; /* #0f1010*/
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #222222; /* #0f1010*/
 }

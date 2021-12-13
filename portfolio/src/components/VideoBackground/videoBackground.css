@@ -17,7 +17,7 @@
 /* ending ENTER animation */
 .videoout-enter-active {
   opacity: 1;
-  transition: all 400ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .videoout-exit {
@@ -26,5 +26,5 @@
 
 .videoout-exit-active {
   opacity: 0;
-  transition: all 400ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }

@@ -12,13 +12,8 @@
 
 .home {
   overflow: hidden;
-}
-
-.scroll-container {
-  display: flex;
-
-  justify-content: start;
-  overflow: auto !important;
+  height: calc(100vh - 40px);
+  width: 100vw;
 }
 
 .slider {

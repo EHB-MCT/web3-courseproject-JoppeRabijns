@@ -1,6 +1,6 @@
 .projectDiv {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 40px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@
   position: fixed;
   height: 40px;
   width: 40px;
-  bottom: 55vh;
+  bottom: 50vh;
   border-radius: 50px;
   border: 2px solid rgb(255, 255, 255);
   transition: all 0.1s ease-in-out;
@@ -62,4 +62,9 @@
 .next:hover,
 .prev:hover {
   transform: scale(1.2);
+}
+
+.vimeo {
+  position: absolute;
+  bottom: 10vh;
 }

@@ -1,0 +1,16 @@
+.socials {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  bottom: 1vh;
+  right: 0.5vh;
+  width: 70px;
+  height: 172px;
+  color: #fff;
+}
+
+.socials a {
+  color: #fff;
+}
