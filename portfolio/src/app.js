@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
-import Hero from "./hero";
+import Hero from "./pages/hero";
 
 const App = () => {
   return (

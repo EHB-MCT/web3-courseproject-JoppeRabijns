@@ -6,7 +6,6 @@ body,
   margin: 0;
   padding: 0;
   outline: none;
-  overflow: hidden;
   cursor: none;
 }
 
@@ -20,6 +19,7 @@ body,
 body {
   font-family: "Open Sans", sans-serif;
   box-sizing: border-box;
+  overflow: hidden;
   padding: 20px;
   background-color: #222222; /* #0f1010*/
 }

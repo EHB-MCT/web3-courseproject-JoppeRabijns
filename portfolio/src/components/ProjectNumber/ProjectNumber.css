@@ -1,11 +1,12 @@
 .ProjectNumber {
   position: absolute;
-  left: 2.5vw;
-  bottom: 1vh;
+  left: 2vw;
+  bottom: 2vh;
   z-index: 99;
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
+  margin: 0;
 }
 
 svg line {

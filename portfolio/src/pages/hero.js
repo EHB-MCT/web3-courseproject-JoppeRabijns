@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 
-import "./pages/styles/hero.css";
+import "./styles/hero.css";
 
-import Home from "./pages/home";
-import Project from "./pages/project";
+import Home from "./home";
+import Project from "./project";
 
 const Hero = () => {
   const location = useLocation();

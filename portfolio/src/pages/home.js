@@ -33,7 +33,7 @@ const Home = () => {
 
   function scroll(e) {
     if (slider === null) return 0;
-    e.wheelDelta > 0 ? slider.current.slickNext() : slider.current.slickPrev();
+    e.wheelDelta > 0 ? slider.current.slickPrev() : slider.current.slickNext();
   }
 
   useEffect(() => {
