@@ -13,7 +13,6 @@ import ProjectNumber from "../components/ProjectNumber/ProjectNumber";
 const Home = () => {
   const [video, setVideo] = useState(projects[0].url);
   const [currentNumber, setCurrentNumber] = useState("01");
-
   const [width, setWidth] = useState("650px");
 
   function changeVideo(url) {
@@ -51,7 +50,7 @@ const Home = () => {
           />
         ))}
       </Slider>
-      <VideoBackground url={video} />
+      <VideoBackground url={video} number={currentNumber} />
       <ProjectNumber numberLenght={projects.length} number={currentNumber} />
     </div>
   );

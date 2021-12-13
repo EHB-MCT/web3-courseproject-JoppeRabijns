@@ -22,5 +22,6 @@
 }
 
 .slider {
-  width: 125vw;
+  width: 100vw;
+  height: 100vh;
 }
