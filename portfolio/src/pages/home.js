@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 
 import "./styles/home.css";
@@ -9,7 +9,7 @@ import ProjectTitle from "../components/ProjecTitle/ProjectTitle";
 import ProjectNumber from "../components/ProjectNumber/ProjectNumber";
 import Socials from "../components/Socials/Socials";
 
-const Home = ({ isFirstMount }) => {
+const Home = () => {
   const [video, setVideo] = useState(projects[0].url);
   const [currentNumber, setCurrentNumber] = useState("01");
 
@@ -29,10 +29,24 @@ const Home = ({ isFirstMount }) => {
     slidesToShow: Math.round(window.innerWidth / 550),
     variableWidth: true,
   };
+  const slider = useRef(null);
+
+  function scroll(e) {
+    if (slider === null) return 0;
+    e.wheelDelta > 0 ? slider.current.slickNext() : slider.current.slickPrev();
+  }
+
+  useEffect(() => {
+    window.addEventListener("wheel", scroll, true);
+
+    return () => {
+      window.removeEventListener("wheel", scroll, true);
+    };
+  }, []);
 
   return (
     <div className="home">
-      <Slider {...settings} className="slider">
+      <Slider {...settings} ref={slider} className="slider">
         {projects.map((project) => (
           <ProjectTitle
             style={{ width: "650px" }}
