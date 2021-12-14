@@ -17,6 +17,6 @@
 }
 
 .slider {
-  height: calc(100vh - 40px);
-  width: calc(100vw - 40px);
+  width: 100%;
+  width: 100%;
 }

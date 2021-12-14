@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import Socials from "../components/Socials/Socials";
 import FeatherIcon from "feather-icons-react";
 

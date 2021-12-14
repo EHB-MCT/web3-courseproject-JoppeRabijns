@@ -15,7 +15,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (location !== displayLocation) setTransistionStage("fadeOut");
-  }, [location]);
+  }, [displayLocation, location]);
 
   return (
     <div

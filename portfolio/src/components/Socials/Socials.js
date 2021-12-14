@@ -20,11 +20,11 @@ const Socials = () => {
         <FeatherIcon size="24" classname="icon" icon="instagram" />
       </a>
       <a
-        href="https://www.facebook.com/joppe.rabijns"
+        href="https://github.com/JoppeRabijns"
         target="_blank"
         rel="noreferrer"
       >
-        <FeatherIcon size="24" classname="icon" icon="facebook" />
+        <FeatherIcon size="24" classname="icon" icon="github" />
       </a>
     </div>
   );

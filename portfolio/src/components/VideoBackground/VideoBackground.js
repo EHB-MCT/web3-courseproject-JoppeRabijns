@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./videoBackground.css";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
