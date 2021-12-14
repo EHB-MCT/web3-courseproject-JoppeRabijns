@@ -7,6 +7,7 @@
 }
 
 .titleDiv {
+  position: absolute;
   text-align: center;
   color: #fff;
   margin-top: -10vh;
@@ -64,7 +65,29 @@
   transform: scale(1.2);
 }
 
+.main {
+  margin-top: 180vh;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 .vimeo {
-  position: absolute;
-  bottom: 10vh;
+  margin-bottom: 60px;
+}
+
+.info {
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  width: 45vw;
+  margin-bottom: 30px;
+}
+.info h1 {
+  margin-right: 6vw;
+  color: #fff;
+}
+.info p {
+  color: rgba(255, 255, 255, 0.671);
 }

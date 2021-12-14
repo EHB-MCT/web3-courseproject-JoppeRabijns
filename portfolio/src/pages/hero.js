@@ -5,6 +5,7 @@ import "./styles/hero.css";
 
 import Home from "./home";
 import Project from "./project";
+import Contact from "./contact";
 
 const Hero = () => {
   const location = useLocation();
@@ -29,6 +30,7 @@ const Hero = () => {
       <Switch location={displayLocation}>
         <Route path="/" exact component={Home} />
         <Route path="/project/:number" component={Project} />
+        <Route path="/contact" component={Contact} />
         <Route path="*" component={Home} />
       </Switch>
     </div>

@@ -1,9 +1,11 @@
 .fadeIn {
   animation: 1s fadeIn forwards;
+  overflow-x: hidden;
 }
 
 .fadeOut {
   animation: 1s fadeOut forwards;
+  overflow-x: hidden;
 }
 
 @keyframes fadeIn {

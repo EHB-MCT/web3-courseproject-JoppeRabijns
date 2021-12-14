@@ -1,0 +1,45 @@
+.contact {
+  height: calc(100vh - 40px);
+  width: calc(100vw - 40px);
+  background-color: rgb(48, 48, 48);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  float: left;
+  color: #fff;
+  font-weight: 800;
+  font-size: 450%;
+  margin-top: 15vh;
+  width: 70vw;
+}
+
+.title span {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  color: transparent;
+}
+
+.personal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50vw;
+}
+
+.personal img {
+  height: auto;
+  width: 40vh;
+}
+
+.personal .details {
+  width: 40vh;
+  color: #fff;
+}
+
+.details h3 {
+  display: flex;
+  justify-content: left;
+}

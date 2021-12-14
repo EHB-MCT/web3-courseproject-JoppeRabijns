@@ -14,7 +14,7 @@ body #magicMouseCursor {
 /* body #magicMouseCursor::before {
   content: ">";
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 900;
   width: 4px;
   height: 8px;
   line-height: 8px;
@@ -28,7 +28,7 @@ body #magicMouseCursor {
 body #magicMouseCursor::after {
   content: "<";
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 900;
   width: 4px;
   height: 8px;
   line-height: 8px;
@@ -37,5 +37,4 @@ body #magicMouseCursor::after {
   left: -20px;
   top: 16px;
   color: rgb(255, 255, 255);
-}
- */
+} */

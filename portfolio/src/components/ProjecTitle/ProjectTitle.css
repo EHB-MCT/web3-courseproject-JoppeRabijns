@@ -9,7 +9,7 @@
 }
 .project .projectTitle {
   font-size: 4.5rem;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1.3px;
   -webkit-text-stroke-color: white;
   font-weight: 700;
   margin: 0;

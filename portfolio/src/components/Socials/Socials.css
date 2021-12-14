@@ -14,3 +14,7 @@
 .socials a {
   color: #fff;
 }
+
+.socials a:hover {
+  transform: scale(1.4);
+}

@@ -19,18 +19,6 @@ const Project = () => {
         <h1 className="title">{project.title}</h1>
         <h2 className="subtitle">{project.subtitle}</h2>
       </div>
-
-      <iframe
-        src={project.vimeoUrl}
-        title={project.title}
-        width="640"
-        height="360"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-        className="vimeo"
-      ></iframe>
-
       <Link to="/">
         <div className="prev">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -41,6 +29,22 @@ const Project = () => {
       </Link>
       <VideoBackground url={project.url} />
       <Socials />
+      <div className="main">
+        <div className="info">
+          <h1>{project.title}</h1>
+          <p>{project.info}</p>
+        </div>
+        <iframe
+          src={project.vimeoUrl}
+          title={project.title}
+          width="1280"
+          height="720"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          className="vimeo"
+        ></iframe>
+      </div>
     </div>
   );
 };

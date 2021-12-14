@@ -49,7 +49,7 @@ const Home = () => {
       <Slider {...settings} ref={slider} className="slider">
         {projects.map((project) => (
           <ProjectTitle
-            style={{ width: "650px" }}
+            style={{ width: "600px" }}
             key={project.number}
             number={project.number}
             title={project.title}
