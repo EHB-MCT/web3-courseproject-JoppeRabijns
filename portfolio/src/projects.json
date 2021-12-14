@@ -26,7 +26,8 @@
     "new": "false",
     "category": "Videografie",
     "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638890227/portfolio/ciedevleesklak_thkspu.mp4",
-    "info": "Compagnie de Vleesklak is een zacht gerijpt collectief van 5 heren met een dans- en muziekverleden en -heden. Het lijken vreemde snuiters, ontsnapt uit de snuisterijenkast van een overjarige antiquair, of verdwaalde musketiers met als lijfspreuk één voor allen, allen voor één. De wereldvreemde reizigers zijn altijd op zoek naar een antwoord zonder vraag… De Vleesklak staat niet voor een hapklare brok, maar wil tegelijk exuberant en subtiel aanwezig zijn.."
+    "vimeoUrl": "https://player.vimeo.com/video/631281780?h=5820c30602",
+    "info": "Compagnie de Vleesklak is een zacht gerijpt collectief van 5 heren met een dans- en muziekverleden en -heden. Het lijken vreemde snuiters, ontsnapt uit de snuisterijenkast van een overjarige antiquair, of verdwaalde musketiers met als lijfspreuk één voor allen, allen voor één. De wereldvreemde reizigers zijn altijd op zoek naar een antwoord zonder vraag…De Vleesklak staat niet voor een hapklare brok, maar wil tegelijk exuberant en subtiel aanwezig zijn.."
   },
   {
     "number": "04",
@@ -35,6 +36,7 @@
     "new": "false",
     "category": "Videografie",
     "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638890252/portfolio/emj2021_oqtdeb.mp4",
+    "vimeoUrl": "https://player.vimeo.com/video/538336135",
     "info": "Elk jaar rond 1 mei vindt in het Noord-Limburgse Pelt (België) het Europees Muziekfestival voor de Jeugd plaats. Dit jaarlijkse muzikale feest is afwisselend een koorfestival en een instrumentaal festival. 4.000 tot 6.000 jongeren uit heel Europa, en soms ver daarbuiten, geven ieder jaar opnieuw de kleurrijk bevlagde straten een internationale sfeer van verbroedering."
   },
   {
@@ -43,7 +45,9 @@
     "subtitle": "WEB3",
     "new": "false",
     "category": "Code",
-    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638889879/portfolio/pitchFX_qkhia3.mov"
+    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638889879/portfolio/pitchFX_qkhia3.mov",
+    "vimeoUrl": "",
+    "info": ""
   },
   {
     "number": "06",
@@ -51,14 +55,18 @@
     "subtitle": "Frontend",
     "new": "false",
     "category": "Code",
-    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638891835/portfolio/PELT_SANKTMORITZ_xmfcwh.mov"
+    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638891835/portfolio/PELT_SANKTMORITZ_xmfcwh.mov",
+    "vimeoUrl": "",
+    "info": ""
   },
   {
-    "number": "07",
-    "title": "Open Raam",
-    "subtitle": "Bells Lab",
+    "number": "08",
+    "title": "Funky",
+    "subtitle": "LolPloeg Ekonomika",
     "new": "false",
     "category": "Videografie",
-    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1639388741/portfolio/christmassbellslab_qsmyh9.mp4"
+    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1639492053/portfolio/websiteFunky_roez6c.mov",
+    "vimeoUrl": "https://player.vimeo.com/video/534774651",
+    "info": ""
   }
 ]

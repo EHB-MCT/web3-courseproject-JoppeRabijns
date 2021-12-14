@@ -38,7 +38,7 @@
   position: fixed;
   height: 40px;
   width: 40px;
-  top: 50vh;
+  top: 45vh;
   border-radius: 50px;
   border: 2px solid rgb(255, 255, 255);
   transition: all 0.2s ease-in-out;
@@ -75,6 +75,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  opacity: 1;
 }
 .vimeo {
   margin-bottom: 60px;
