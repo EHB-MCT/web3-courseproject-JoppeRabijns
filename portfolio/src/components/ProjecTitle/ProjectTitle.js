@@ -10,7 +10,7 @@ const ProjectTitle = (props) => {
       className="project"
       onMouseOver={() => {
         setActive(true);
-        props.changeVideo(props.url);
+        props.changeVideo(props.url, props.imageUrl);
         props.changeNumber(props.number);
       }}
       onMouseOut={() => {

@@ -44,7 +44,7 @@ const Project = () => {
           </div>
         </Link>
         <div className="icon-scroll"></div>
-        <VideoBackground url={project.url} />
+        <VideoBackground url={project.url} imageUrl={project.imageUrl} />
         <Socials />
       </div>
       <div className="main" ref={Ref} id="main">
@@ -52,16 +52,29 @@ const Project = () => {
           <h1>{project.title}</h1>
           <p>{project.info}</p>
         </div>
-        <iframe
-          src={project.vimeoUrl}
-          title={project.title}
-          width="1280"
-          height="720"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-          className="vimeo"
-        ></iframe>
+        {project.vimeoUrl === "" ? (
+          <iframe
+            src="https://JoppeRabijns.github.io/DEV5-WERKSTUK-JOPPERABIJNS"
+            title={project.title}
+            width="1280"
+            height="720"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            className="vimeo"
+          ></iframe>
+        ) : (
+          <iframe
+            src={project.vimeoUrl}
+            title={project.title}
+            width="1280"
+            height="720"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            className="vimeo"
+          ></iframe>
+        )}
       </div>
     </>
   );

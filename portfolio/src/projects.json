@@ -1,13 +1,13 @@
 [
   {
     "number": "01",
-    "title": "kanl",
-    "subtitle": "Precious Moment",
+    "title": "Pelt-St.Moritz",
+    "subtitle": "Frontend",
     "new": "true",
-    "category": "Videografie",
-    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638886745/portfolio/kanl_vgr2ju.mp4",
-    "vimeoUrl": "https://player.vimeo.com/video/643827538?h=cee086cf02",
-    "info": "Op zondag 24 oktober mochten de leerlingen dans van Lommel eindelijk hun afstudeerproject tonen. En wat deed het deugd om op het podium te staan in een prachtig gerenoveerd CC De Adelberg! Onder muzikale begeleiding van pianist Martijn Van den Dungen, fluitiste Lindsay Gijbels en gitarist Jeff Mennen brachten de leerlingen een klassieke les op het podium en dat leverde een prachtig samenspel van muziek en dans op. Verder kon het publiek genieten van afwisselende choreografieën en beeldfragmenten waarbij de eigen inbreng en creativiteit van de leerlingen sterk naar voren kwam. Zangeressen Iliana Tsiafakis en Lotte Broeckx zorgden dan weer voor een prachtig intiem moment, waarbij zang en dans één geheel vormde."
+    "category": "Code",
+    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638891835/portfolio/PELT_SANKTMORITZ_xmfcwh.mov",
+    "vimeoUrl": "",
+    "info": ""
   },
   {
     "number": "02",
@@ -51,22 +51,33 @@
   },
   {
     "number": "06",
-    "title": "Pelt-St.Moritz",
-    "subtitle": "Frontend",
+    "title": "kanl",
+    "subtitle": "Precious Moment",
     "new": "false",
-    "category": "Code",
-    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638891835/portfolio/PELT_SANKTMORITZ_xmfcwh.mov",
-    "vimeoUrl": "",
-    "info": ""
+    "category": "Videografie",
+    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638886745/portfolio/kanl_vgr2ju.mp4",
+    "vimeoUrl": "https://player.vimeo.com/video/643827538?h=cee086cf02",
+    "info": "Op zondag 24 oktober mochten de leerlingen dans van Lommel eindelijk hun afstudeerproject tonen. En wat deed het deugd om op het podium te staan in een prachtig gerenoveerd CC De Adelberg! Onder muzikale begeleiding van pianist Martijn Van den Dungen, fluitiste Lindsay Gijbels en gitarist Jeff Mennen brachten de leerlingen een klassieke les op het podium en dat leverde een prachtig samenspel van muziek en dans op. Verder kon het publiek genieten van afwisselende choreografieën en beeldfragmenten waarbij de eigen inbreng en creativiteit van de leerlingen sterk naar voren kwam. Zangeressen Iliana Tsiafakis en Lotte Broeckx zorgden dan weer voor een prachtig intiem moment, waarbij zang en dans één geheel vormde."
   },
   {
-    "number": "08",
+    "number": "07",
     "title": "Funky",
     "subtitle": "LolPloeg Ekonomika",
     "new": "false",
     "category": "Videografie",
     "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1639492053/portfolio/websiteFunky_roez6c.mov",
     "vimeoUrl": "https://player.vimeo.com/video/534774651",
+    "info": ""
+  },
+  {
+    "number": "08",
+    "title": "MTB Dabbers",
+    "subtitle": "Fietstenues",
+    "new": "false",
+    "category": "Videografie",
+    "url": "",
+    "imageUrl": "https://adequaat.media/images/projects/dabbers/6890_20210911_110940_203694186_original.JPG",
+    "vimeoUrl": "",
     "info": ""
   }
 ]

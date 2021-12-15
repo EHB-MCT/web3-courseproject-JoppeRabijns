@@ -12,9 +12,11 @@ import Socials from "../components/Socials/Socials";
 const Home = () => {
   const [video, setVideo] = useState(projects[0].url);
   const [currentNumber, setCurrentNumber] = useState("01");
+  const [image, setImage] = useState(projects[0].imageUrl);
 
-  function changeVideo(url) {
+  function changeVideo(url, imageUrl) {
     setVideo(url);
+    setImage(imageUrl);
   }
 
   function changeNumber(number) {
@@ -26,6 +28,8 @@ const Home = () => {
     speed: 500,
     lazyLoad: true,
     accessibility: true,
+    touchThreshold: 100,
+    swipeToSlide: true,
     slidesToShow: Math.round(window.innerWidth / 550),
     variableWidth: true,
   };
@@ -56,12 +60,13 @@ const Home = () => {
             new={project.new}
             category={project.category}
             url={project.url}
+            imageUrl={project.imageUrl}
             changeNumber={changeNumber}
             changeVideo={changeVideo}
           />
         ))}
       </Slider>
-      <VideoBackground url={video} number={currentNumber} />
+      <VideoBackground url={video} number={currentNumber} imageUrl={image} />
       <ProjectNumber numberLenght={projects.length} number={currentNumber} />
       <Socials />
     </div>

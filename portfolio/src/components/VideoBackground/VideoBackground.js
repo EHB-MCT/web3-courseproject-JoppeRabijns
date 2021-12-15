@@ -6,14 +6,18 @@ const VideoBackground = (props) => {
   return (
     <TransitionGroup>
       <CSSTransition key={props.number} timeout={1000} classNames="videoout">
-        <video
-          autoPlay
-          muted
-          loop
-          className="video"
-          src={props.url}
-          type="video/mp4"
-        />
+        {props.url === "" ? (
+          <img className="image" src={props.imageUrl} alt="" />
+        ) : (
+          <video
+            autoPlay
+            muted
+            loop
+            className="video"
+            src={props.url}
+            type="video/mp4"
+          />
+        )}
       </CSSTransition>
     </TransitionGroup>
   );

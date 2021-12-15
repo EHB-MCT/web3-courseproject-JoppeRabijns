@@ -26,7 +26,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50vw;
+  width: 40vw;
+  margin-top: 5vh;
 }
 
 .personal img {
@@ -35,11 +36,14 @@
 }
 
 .personal .details {
-  width: 40vh;
   color: #fff;
 }
 
 .details h3 {
   display: flex;
   justify-content: left;
+}
+
+.details span {
+  margin-left: 25px;
 }
