@@ -5,6 +5,7 @@
     "subtitle": "Frontend",
     "new": "true",
     "category": "Code",
+    "imageUrl": "",
     "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638891835/portfolio/PELT_SANKTMORITZ_xmfcwh.mov",
     "vimeoUrl": "",
     "info": ""
@@ -15,6 +16,7 @@
     "subtitle": "Imago Tijl",
     "new": "false",
     "category": "Videografie",
+    "imageUrl": "https://adequaat.media/images/covida.png",
     "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638886759/portfolio/covida_tmbjrm.mp4",
     "vimeoUrl": "https://player.vimeo.com/video/587941042?h=e926cb389a",
     "info": "Imago Tijl – de dansgroep die onlosmakelijk verbonden is aan het Sint-Hubertuscollege van Neerpelt – werd opgericht als Keurgroep Tijl in 1957. Onder leiding van Alicia Borghten, en later ook Luc Morren, Lies Oversteyns en Jan Imants, ontwikkelde de dansgroep gaandeweg ’n volstrekt unieke stijl die Imago Tijl voerde naar podia in de meeste Europese landen en naar Amerika, Afrika en Azië. Dansgroep Imago Tijl krijgt met haar 170-tal dansers waardering vanuit alle hoeken van de podiumkunsten. Vanaf de start van elk nieuw schooljaar werken de choreografen telkens opnieuw ’n avondvullend programma uit dat in de lente van het lopende jaar wordt gepresenteerd in het Neerpeltse Dommelhoftheater."
@@ -25,6 +27,7 @@
     "subtitle": "Cie De Vleesklak",
     "new": "false",
     "category": "Videografie",
+    "imageUrl": "https://adequaat.media/images/ciedevleesklak.png",
     "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638890227/portfolio/ciedevleesklak_thkspu.mp4",
     "vimeoUrl": "https://player.vimeo.com/video/631281780?h=5820c30602",
     "info": "Compagnie de Vleesklak is een zacht gerijpt collectief van 5 heren met een dans- en muziekverleden en -heden. Het lijken vreemde snuiters, ontsnapt uit de snuisterijenkast van een overjarige antiquair, of verdwaalde musketiers met als lijfspreuk één voor allen, allen voor één. De wereldvreemde reizigers zijn altijd op zoek naar een antwoord zonder vraag…De Vleesklak staat niet voor een hapklare brok, maar wil tegelijk exuberant en subtiel aanwezig zijn.."
@@ -35,6 +38,7 @@
     "subtitle": "Promotie",
     "new": "false",
     "category": "Videografie",
+    "imageUrl": "https://adequaat.media/images/emj2021Photo.png",
     "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638890252/portfolio/emj2021_oqtdeb.mp4",
     "vimeoUrl": "https://player.vimeo.com/video/538336135",
     "info": "Elk jaar rond 1 mei vindt in het Noord-Limburgse Pelt (België) het Europees Muziekfestival voor de Jeugd plaats. Dit jaarlijkse muzikale feest is afwisselend een koorfestival en een instrumentaal festival. 4.000 tot 6.000 jongeren uit heel Europa, en soms ver daarbuiten, geven ieder jaar opnieuw de kleurrijk bevlagde straten een internationale sfeer van verbroedering."
@@ -45,32 +49,24 @@
     "subtitle": "WEB3",
     "new": "false",
     "category": "Code",
+    "imageUrl": "",
     "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638889879/portfolio/pitchFX_qkhia3.mov",
     "vimeoUrl": "",
     "info": ""
   },
   {
     "number": "06",
-    "title": "kanl",
-    "subtitle": "Precious Moment",
-    "new": "false",
-    "category": "Videografie",
-    "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1638886745/portfolio/kanl_vgr2ju.mp4",
-    "vimeoUrl": "https://player.vimeo.com/video/643827538?h=cee086cf02",
-    "info": "Op zondag 24 oktober mochten de leerlingen dans van Lommel eindelijk hun afstudeerproject tonen. En wat deed het deugd om op het podium te staan in een prachtig gerenoveerd CC De Adelberg! Onder muzikale begeleiding van pianist Martijn Van den Dungen, fluitiste Lindsay Gijbels en gitarist Jeff Mennen brachten de leerlingen een klassieke les op het podium en dat leverde een prachtig samenspel van muziek en dans op. Verder kon het publiek genieten van afwisselende choreografieën en beeldfragmenten waarbij de eigen inbreng en creativiteit van de leerlingen sterk naar voren kwam. Zangeressen Iliana Tsiafakis en Lotte Broeckx zorgden dan weer voor een prachtig intiem moment, waarbij zang en dans één geheel vormde."
-  },
-  {
-    "number": "07",
     "title": "Funky",
     "subtitle": "LolPloeg Ekonomika",
     "new": "false",
     "category": "Videografie",
+    "imageUrl": "https://adequaat.media/images/funky.png",
     "url": "https://res.cloudinary.com/drxe6ukjd/video/upload/v1639492053/portfolio/websiteFunky_roez6c.mov",
     "vimeoUrl": "https://player.vimeo.com/video/534774651",
     "info": ""
   },
   {
-    "number": "08",
+    "number": "07",
     "title": "MTB Dabbers",
     "subtitle": "Fietstenues",
     "new": "false",

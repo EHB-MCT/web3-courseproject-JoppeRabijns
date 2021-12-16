@@ -55,7 +55,7 @@ const Project = () => {
           <iframe
             src="https://JoppeRabijns.github.io/DEV5-WERKSTUK-JOPPERABIJNS"
             title={project.title}
-            width={window.innerWidth}
+            width={window.innerWidth - window.innerWidth / 8}
             height={(window.innerWidth / 16) * 9}
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"
@@ -66,7 +66,7 @@ const Project = () => {
           <iframe
             src={project.vimeoUrl}
             title={project.title}
-            width={window.innerWidth}
+            width={window.innerWidth - window.innerWidth / 8}
             height={(window.innerWidth / 16) * 9}
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"

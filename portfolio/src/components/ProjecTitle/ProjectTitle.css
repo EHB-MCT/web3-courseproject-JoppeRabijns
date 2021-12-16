@@ -3,6 +3,7 @@
   max-width: 650px; */
   height: 100vh;
   display: flex;
+  margin-left: -30px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
