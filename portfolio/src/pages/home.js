@@ -13,12 +13,25 @@ const Home = () => {
   const [video, setVideo] = useState(projects[0].url);
   const [currentNumber, setCurrentNumber] = useState("01");
   const [image, setImage] = useState(projects[0].imageUrl);
+  const [width, setWidth] = useState("600px");
+
+  const customWidth = () => {
+    if (window.innerWidth < 600) {
+      setWidth(`${window.innerWidth}px`);
+    } else {
+      setWidth("600px");
+    }
+  };
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    customWidth();
+  });
 
   function changeVideo(url, imageUrl) {
     setVideo(url);
     setImage(imageUrl);
   }
-
   function changeNumber(number) {
     setCurrentNumber(number);
   }
@@ -42,7 +55,6 @@ const Home = () => {
 
   useEffect(() => {
     window.addEventListener("wheel", scroll, true);
-
     return () => {
       window.removeEventListener("wheel", scroll, true);
     };
@@ -53,7 +65,7 @@ const Home = () => {
       <Slider {...settings} ref={slider} className="slider">
         {projects.map((project) => (
           <ProjectTitle
-            style={{ width: "600px" }}
+            style={{ width: width }}
             key={project.number}
             number={project.number}
             title={project.title}

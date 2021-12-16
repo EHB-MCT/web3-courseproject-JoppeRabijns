@@ -19,3 +19,19 @@
 .socials a:hover {
   transform: scale(1.4);
 }
+@media only screen and (max-width: 600px) {
+  .socials {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    right: 0.5vh;
+    width: 50vw;
+    height: auto;
+    color: #fff;
+  }
+}

@@ -16,12 +16,11 @@ const Project = () => {
   useEffect(() => {
     gsap.from("#main", {
       opacity: 0,
-      duration: 2,
       x: 150,
       scrollTrigger: {
         trigger: "#main",
-        start: "top center",
-        end: "+=200px",
+        start: "top bottom",
+        end: "+=100px",
       },
     });
   }, []);
@@ -56,8 +55,8 @@ const Project = () => {
           <iframe
             src="https://JoppeRabijns.github.io/DEV5-WERKSTUK-JOPPERABIJNS"
             title={project.title}
-            width="1280"
-            height="720"
+            width={window.innerWidth}
+            height={(window.innerWidth / 16) * 9}
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen
@@ -67,8 +66,8 @@ const Project = () => {
           <iframe
             src={project.vimeoUrl}
             title={project.title}
-            width="1280"
-            height="720"
+            width={window.innerWidth}
+            height={(window.innerWidth / 16) * 9}
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen

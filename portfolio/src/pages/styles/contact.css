@@ -1,7 +1,7 @@
 .contact {
   height: calc(100vh - 40px);
   width: calc(100vw - 40px);
-  background-color: rgb(48, 48, 48);
+  background-color: rgba(48, 48, 48, 0.664);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -26,13 +26,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 40vw;
+  width: 70vw;
+  max-width: 960px;
   margin-top: 5vh;
 }
 
 .personal img {
   height: auto;
-  width: 40vh;
+  max-width: 500px;
+  width: 60%;
 }
 
 .personal .details {

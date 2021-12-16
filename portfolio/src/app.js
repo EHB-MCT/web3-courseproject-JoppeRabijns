@@ -7,6 +7,11 @@ const App = () => {
   return (
     <Router>
       <div>
+        <img
+          className="overlay"
+          src="https://blog.spoongraphics.co.uk/wp-content/uploads/2012/05/22.jpg"
+          alt=""
+        />
         <nav className="navigation">
           <NavLink exact activeClassName="active" className="link" to="/">
             Home

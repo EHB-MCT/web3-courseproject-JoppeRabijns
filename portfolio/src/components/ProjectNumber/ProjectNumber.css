@@ -13,3 +13,9 @@ svg line {
   stroke: rgb(255, 255, 255);
   stroke-width: 3;
 }
+
+@media only screen and (max-width: 600px) {
+  .ProjectNumber {
+    display: none;
+  }
+}

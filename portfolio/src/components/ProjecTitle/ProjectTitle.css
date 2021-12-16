@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 .project .projectTitle {
-  font-size: 4.5rem;
+  font-size: 450%;
   -webkit-text-stroke-width: 1.3px;
   -webkit-text-stroke-color: white;
   font-weight: 700;
@@ -30,7 +30,7 @@
   color: #fff;
   margin-bottom: -2.5em;
   margin-left: -1.5rem;
-  font-size: 1rem;
+  font-size: 100%;
   font-weight: 400;
 }
 
@@ -41,7 +41,7 @@
 .project .projectNew {
   position: absolute;
   color: rgb(255, 0, 0);
-  font-size: 1rem;
+  font-size: 100%;
   font-weight: 400;
   margin: 0;
   text-align: right;
@@ -59,4 +59,25 @@
 
 .link {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .project .projectTitle {
+    font-size: 200%;
+    -webkit-text-stroke-width: 1px;
+  }
+  .project .projectNew {
+    position: absolute;
+    color: rgb(255, 0, 0);
+    font-size: 50%;
+    font-weight: 400;
+    right: -20px;
+  }
+  .project .projectNumber {
+    color: #fff;
+    margin-bottom: -1.5em;
+    margin-left: -1rem;
+    font-size: 60%;
+    font-weight: 400;
+  }
 }

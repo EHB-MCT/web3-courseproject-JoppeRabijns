@@ -1,6 +1,7 @@
 .projectDiv {
   width: 100vw;
   height: calc(100vh - 40px);
+  width: calc(100vw - 40px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,5 +137,72 @@
   100% {
     opacity: 0;
     transform: translateY(46px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .titleDiv {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    margin-top: 35vh;
+    z-index: 99;
+    height: 500px;
+  }
+  .titleDiv .title {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: white;
+    color: transparent;
+  }
+
+  .titleDiv .subtitle {
+    font-size: 1.2rem;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .prev {
+    display: none;
+  }
+  .icon-scroll {
+    transform: scale(0.8);
+    top: 80vh;
+    box-shadow: inset 0 0 0 2px #fff;
+    border-radius: 25px;
+  }
+
+  .main {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 1;
+  }
+  .vimeo {
+    margin-bottom: 60px;
+  }
+
+  .info {
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    flex-direction: column;
+    max-width: 1260px;
+    margin-bottom: 30px;
+  }
+  .info h1 {
+    margin-right: 6vw;
+    width: 100%;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  .info p {
+    color: rgba(255, 255, 255, 0.671);
+    margin: 0;
   }
 }

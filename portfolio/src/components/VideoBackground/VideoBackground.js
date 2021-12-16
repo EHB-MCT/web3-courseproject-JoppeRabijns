@@ -6,7 +6,7 @@ const VideoBackground = (props) => {
   return (
     <TransitionGroup>
       <CSSTransition key={props.number} timeout={1000} classNames="videoout">
-        {props.url === "" ? (
+        {props.url === "" || window.innerWidth < 769 ? (
           <img className="image" src={props.imageUrl} alt="" />
         ) : (
           <video

@@ -45,3 +45,16 @@ body {
 .navigation .active {
   border-bottom: 3px solid #fff;
 }
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  position: fixed;
+  pointer-events: none;
+}
+
