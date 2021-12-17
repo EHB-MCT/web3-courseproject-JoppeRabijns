@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import VideoBackground from "../components/VideoBackground/VideoBackground";
 import { Link, useParams } from "react-router-dom";
 import { gsap } from "gsap";
@@ -13,19 +13,6 @@ import ProjectDetails from "../components/ProjectDetails/ProjectDetails";
 gsap.registerPlugin(ScrollTrigger);
 
 const Project = () => {
-  const Ref = useRef(null);
-  useEffect(() => {
-    gsap.from("#main", {
-      opacity: 0,
-      x: 150,
-      scrollTrigger: {
-        trigger: "#main",
-        start: "top bottom",
-        end: "+=100px",
-      },
-    });
-  }, []);
-
   const { number } = useParams();
   let project = projects.filter((project) => project.number === number)[0];
   return (
@@ -47,7 +34,7 @@ const Project = () => {
         <VideoBackground url={project.url} imageUrl={project.imageUrl} />
         <Socials />
       </div>
-      <ProjectDetails ref={Ref} id="main" project={project} />
+      <ProjectDetails project={project} />
     </>
   );
 };

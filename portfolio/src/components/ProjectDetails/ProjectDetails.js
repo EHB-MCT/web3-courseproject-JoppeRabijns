@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
 import "./ProjectDetails.css";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ProjectDetails = (props) => {
+  useEffect(() => {
+    gsap.from("#main", {
+      opacity: 0,
+      x: 150,
+      scrollTrigger: {
+        trigger: "#main",
+        start: "top bottom",
+        end: "+=100px",
+      },
+    });
+  }, []);
   return (
-    <div className="main">
+    <div className="main" id="main">
       <div className="info">
         <h1>{props.project.title}</h1>
         <p>{props.project.info}</p>
@@ -15,9 +30,9 @@ const ProjectDetails = (props) => {
             title={props.project.title}
             width={window.innerWidth - window.innerWidth / 10}
             height={(window.innerWidth / 16) * 8}
-            frameborder="0"
+            frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
             className="vimeo"
           ></iframe>
         ) : (
@@ -40,9 +55,9 @@ const ProjectDetails = (props) => {
           title={props.project.title}
           width={window.innerWidth - window.innerWidth / 8}
           height={(window.innerWidth / 16) * 9}
-          frameborder="0"
+          frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
           className="vimeo"
         ></iframe>
       )}
