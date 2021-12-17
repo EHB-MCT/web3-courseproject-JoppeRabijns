@@ -24,7 +24,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // Update the document title using the browser API
     customWidth();
   });
 
@@ -39,11 +38,10 @@ const Home = () => {
   const settings = {
     infinite: true,
     speed: 500,
-    lazyLoad: true,
     accessibility: true,
     touchThreshold: 100,
     swipeToSlide: true,
-    slidesToShow: Math.round(window.innerWidth / 550),
+    slidesToShow: Math.round(window.innerWidth / 600),
     variableWidth: true,
   };
   const slider = useRef(null);
@@ -62,6 +60,8 @@ const Home = () => {
 
   return (
     <div className="home">
+      {/*       <h1 className="logo">Joppe Rabijns</h1>
+       */}
       <Slider {...settings} ref={slider} className="slider">
         {projects.map((project) => (
           <ProjectTitle
