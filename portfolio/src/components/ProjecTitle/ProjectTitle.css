@@ -1,6 +1,5 @@
 .project {
-  /*   min-width: 650px;
-  max-width: 650px; */
+  max-width: 600px;
   height: 100vh;
   display: flex;
   margin-left: -30px;
@@ -10,11 +9,15 @@
 }
 .project .projectTitle {
   font-size: 450%;
+  max-width: 600px;
   -webkit-text-stroke-width: 1.3px;
   -webkit-text-stroke-color: white;
   font-weight: 700;
   margin: 0;
   text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .project .active {
@@ -29,6 +32,7 @@
 
 .project .projectNumber {
   color: #fff;
+  text-align: left;
   margin-bottom: -2.5em;
   margin-left: -1.5rem;
   font-size: 100%;
