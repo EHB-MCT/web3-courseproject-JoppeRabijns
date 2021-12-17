@@ -137,8 +137,13 @@
     font-weight: 500;
   }
   .prev {
+    top: 1.5vh;
+    transform: scale(0.8);
+  }
+  .prev .back {
     display: none;
   }
+
   .icon-scroll {
     transform: scale(0.8);
     top: 80vh;

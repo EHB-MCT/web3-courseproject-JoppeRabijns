@@ -34,11 +34,10 @@
   color: #fff;
   text-align: center;
   margin: 0;
-  margin-bottom: 55px;
+  margin-bottom: 60px;
 }
 
 .link a {
-  text-decoration: none;
   color: #fff;
 }
 
@@ -61,15 +60,21 @@
     align-items: baseline;
     flex-direction: column;
     margin-bottom: 15px;
+    width: calc(100vw - 40px);
   }
   .info h1 {
     margin-right: 6vw;
     width: 100%;
     color: #fff;
     font-size: 1.5rem;
+    margin-top: 0;
   }
   .info p {
     color: rgba(255, 255, 255, 0.671);
     margin: 0;
+  }
+  .detailImage {
+    width: calc(100vw - 40px);
+    height: auto;
   }
 }
