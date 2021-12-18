@@ -25,7 +25,7 @@
 }
 
 .detailImage {
-  width: 80vw;
+  width: 60vw;
   height: auto;
   margin-bottom: 15px;
 }
@@ -34,7 +34,7 @@
   color: #fff;
   text-align: center;
   margin: 0;
-  margin-bottom: 60px;
+  margin-bottom: 55px;
 }
 
 .link a {
@@ -76,5 +76,8 @@
   .detailImage {
     width: calc(100vw - 40px);
     height: auto;
+  }
+  .link {
+    margin-bottom: 70px;
   }
 }

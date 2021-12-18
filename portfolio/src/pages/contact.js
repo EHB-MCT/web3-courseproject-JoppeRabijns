@@ -17,19 +17,19 @@ const Contact = () => {
         />
         <div className="details">
           <h3>
-            <FeatherIcon size="24" classname="icon" icon="user" />
+            <FeatherIcon size="24" className="icon" icon="user" />
             <span> Joppe Rabijns</span>
           </h3>
           <h3>
-            <FeatherIcon size="24" classname="icon" icon="mail" />
+            <FeatherIcon size="24" className="icon" icon="mail" />
             <span> joppe@rabijns.be</span>
           </h3>
           <h3>
-            <FeatherIcon size="24" classname="icon" icon="phone" />
+            <FeatherIcon size="24" className="icon" icon="phone" />
             <span> 0478027029</span>
           </h3>
           <h3>
-            <FeatherIcon size="24" classname="icon" icon="map-pin" />
+            <FeatherIcon size="24" className="icon" icon="map-pin" />
             <span> Onderwijslaan 29, 3910 PELT</span>
           </h3>
         </div>
