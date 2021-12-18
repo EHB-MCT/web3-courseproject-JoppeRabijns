@@ -68,6 +68,14 @@ const ProjectDetails = (props) => {
           className="vimeo"
         ></iframe>
       )}
+
+      {props.project.iframeUrl === "" &&
+      props.project.githubUrl === "" &&
+      props.project.vimeoUrl === "" ? (
+        <img className="detailImage" src={props.project.imageUrl} alt="" />
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
