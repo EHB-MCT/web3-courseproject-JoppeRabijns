@@ -58,6 +58,25 @@ body {
   pointer-events: none;
 }
 
+.loading {
+  position: absolute;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading h1 {
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke-width: 1.3px;
+  -webkit-text-stroke-color: white;
+  font-size: 5vw;
+  font-weight: 800;
+}
+
 @media only screen and (max-width: 600px) {
   .navigation .link {
     margin-left: 30px;

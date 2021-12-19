@@ -1,13 +1,15 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, lazy } from "react";
 import Slider from "react-slick";
 
 import "./styles/home.css";
 import projects from "../projects.json";
-
-import VideoBackground from "../components/VideoBackground/VideoBackground";
 import ProjectTitle from "../components/ProjecTitle/ProjectTitle";
 import ProjectNumber from "../components/ProjectNumber/ProjectNumber";
 import Socials from "../components/Socials/Socials";
+
+const VideoBackground = lazy(() =>
+  import("../components/VideoBackground/VideoBackground")
+);
 
 const Home = () => {
   const [video, setVideo] = useState(projects[0].url);
