@@ -29,13 +29,13 @@ async function renderLT(url, comp, name, subtext, req, res) {
         predownload: [
           {
             module: "@nexrender/action-cache",
-            cacheDirectory: "/Users/joppe.rabijns/WEB3/nexrender/cache",
+            cacheDirectory: "/Users/joppe.rabijns/WEB3/pitchFX/backend/cache",
           },
         ],
         postdownload: [
           {
             module: "@nexrender/action-cache",
-            cacheDirectory: "/Users/joppe.rabijns/WEB3/nexrender/cache",
+            cacheDirectory: "/Users/joppe.rabijns/WEB3/pitchFX/backend/cache",
           },
         ],
         postrender: [
@@ -46,7 +46,7 @@ async function renderLT(url, comp, name, subtext, req, res) {
           },
           {
             module: "@nexrender/action-copy",
-            output: `/Users/joppe.rabijns/WEB3/nexrender/backend/outputs/${req.body.projectName}/LT.mp4`,
+            output: `/Users/joppe.rabijns/WEB3/pitchFX/backend/outputs/${req.body.projectName}/LT.mp4`,
           },
         ],
       },
