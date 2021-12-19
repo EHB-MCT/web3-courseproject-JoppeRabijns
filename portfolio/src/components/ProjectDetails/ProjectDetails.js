@@ -56,17 +56,33 @@ const ProjectDetails = (props) => {
 
       {props.project.iframeUrl === "" ? (
         <></>
+      ) : window.innerWidth < 600 ? (
+        <>
+          <img className="detailImage" src={props.project.imageUrl} alt="" />
+          <h4 className="link">
+            <a href={props.project.iframeUrl} target="_blank" rel="noreferrer">
+              {props.project.iframeUrl}
+            </a>
+          </h4>
+        </>
       ) : (
-        <iframe
-          src={props.project.iframeUrl}
-          title={props.project.title}
-          width={window.innerWidth - window.innerWidth / 10}
-          height={(window.innerWidth / 16) * 8}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-          className="vimeo"
-        ></iframe>
+        <>
+          <iframe
+            src={props.project.iframeUrl}
+            title={props.project.title}
+            width={window.innerWidth - window.innerWidth / 10}
+            height={(window.innerWidth / 16) * 8}
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            className="vimeo"
+          ></iframe>
+          <h4 className="link">
+            <a href={props.project.iframeUrl} target="_blank" rel="noreferrer">
+              {props.project.iframeUrl}
+            </a>
+          </h4>
+        </>
       )}
 
       {props.project.iframeUrl === "" &&
