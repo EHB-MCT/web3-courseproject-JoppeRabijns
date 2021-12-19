@@ -1,17 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import Hero from "./pages/hero";
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <div>
-        <img
+        {/*  <img
           className="overlay"
           src="https://blog.spoongraphics.co.uk/wp-content/uploads/2012/05/22.jpg"
           alt=""
-        />
+        /> */}
         <nav className="navigation">
           <NavLink exact activeClassName="active" className="link" to="/">
             Home
@@ -22,7 +23,7 @@ const App = () => {
         </nav>
         <Hero />
       </div>
-    </Router>
+    </HashRouter>
   );
 };
 
