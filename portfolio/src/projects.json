@@ -43,7 +43,7 @@
     "title": "Glutenvrij dichtbij",
     "subtitle": "Javascript &  Express.js",
     "new": "false",
-    "category": "WEB 2",
+    "category": "WEB2",
     "imageUrl": "https://res.cloudinary.com/drxe6ukjd/image/upload/v1639916302/Web_1920_8_ij1cat.png",
     "url": "",
     "vimeoUrl": "",
@@ -82,7 +82,7 @@
     "title": "MTB Dabbers",
     "subtitle": "Fietstenues",
     "new": "false",
-    "category": "Grafisch",
+    "category": "adeQuaat.media",
     "url": "",
     "imageUrl": "https://adequaat.media/images/projects/dabbers/6890_20210911_110940_203694186_original.JPG",
     "vimeoUrl": "",
@@ -115,5 +115,18 @@
     "iframeUrl": "",
     "githubUrl": "",
     "info": ""
+  },
+  {
+    "number": "10",
+    "title": "Covida",
+    "subtitle": "Videografie",
+    "new": "true",
+    "category": "adeQuaat.media",
+    "url": "https://adequaat.media/video/covida.mp4",
+    "imageUrl": "https://adequaat.media/images/covida.png",
+    "vimeoUrl": "https://player.vimeo.com/video/564998769",
+    "iframeUrl": "",
+    "githubUrl": "",
+    "info": "Imago Tijl – de dansgroep die onlosmakelijk verbonden is aan het Sint-Hubertuscollege van Neerpelt – werd opgericht als Keurgroep Tijl in 1957. Onder leiding van Alicia Borghten, en later ook Luc Morren, Lies Oversteyns en Jan Imants, ontwikkelde de dansgroep gaandeweg ’n volstrekt unieke stijl die Imago Tijl voerde naar podia in de meeste Europese landen en naar Amerika, Afrika en Azië. Dansgroep Imago Tijl krijgt met haar 170-tal dansers waardering vanuit alle hoeken van de podiumkunsten. Vanaf de start van elk nieuw schooljaar werken de choreografen telkens opnieuw ’n avondvullend programma uit dat in de lente van het lopende jaar wordt gepresenteerd in het Neerpeltse Dommelhoftheater."
   }
 ]
